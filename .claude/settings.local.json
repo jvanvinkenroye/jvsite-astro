@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:oliverstickel.de)",
+      "WebFetch(domain:vanvinkenroye.de)",
+      "mcp__mcpm_profile_dev__browsermcp_browser_navigate",
+      "mcp__mcpm_profile_dev__playwright_browser_take_screenshot",
+      "mcp__mcpm_profile_dev__playwright_browser_snapshot",
+      "mcp__mcpm_profile_dev__playwright_browser_navigate",
+      "mcp__mcpm_profile_dev__playwright_browser_click",
+      "mcp__mcpm_profile_dev__playwright_browser_resize",
+      "WebFetch(domain:vene.ro)",
+      "Bash(wget:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

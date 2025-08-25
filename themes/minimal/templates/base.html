@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="{% block html_lang %}{{ DEFAULT_LANG }}{% endblock html_lang %}">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}{{ SITENAME }}{% endblock title %}</title>
+    <meta name="description" content="Jan Vanvinkenroye - Wissenschaftlicher Mitarbeiter, Sozialarbeiter und Dozent mit Schwerpunkt Digitalisierung in Bildung und Sozialer Arbeit">
+    <meta name="author" content="{{ AUTHOR }}">
+    
+    <!-- FontAwesome and Academicons -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
+    <link rel="stylesheet" href="https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css">
+    
+    <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/main.css" />
+    
+    {% block extra_head %}{% endblock extra_head %}
+</head>
+
+<body>
+    <main>
+        {% block content %}{% endblock content %}
+    </main>
+
+    <footer>
+        <p>&copy; 2024 {{ AUTHOR }} • Generated with <a href="https://getpelican.com/">Pelican</a></p>
+    </footer>
+</body>
+</html>

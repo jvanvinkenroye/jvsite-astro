@@ -1,0 +1,256 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #fff;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+/* Header */
+header {
+    margin-bottom: 2rem;
+}
+
+header h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.contact-info {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.contact-info a {
+    color: #0066cc;
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+.contact-info i {
+    margin-right: 0.3rem;
+    width: 1em;
+}
+
+/* Main content */
+main {
+    margin-bottom: 2rem;
+}
+
+section {
+    margin-bottom: 2rem;
+}
+
+h2 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 0.3rem;
+}
+
+h2 i {
+    margin-right: 0.5rem;
+    color: #666;
+    width: 1.2em;
+}
+
+h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+}
+
+h4 {
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 0.2rem;
+    color: #333;
+}
+
+p {
+    margin-bottom: 0.8rem;
+}
+
+/* Entry layout (CV-style entries) */
+.entry {
+    display: flex;
+    margin-bottom: 1.5rem;
+    gap: 1rem;
+}
+
+.date {
+    flex: 0 0 80px;
+    font-family: "SF Mono", Monaco, Consolas, monospace;
+    font-size: 0.85rem;
+    color: #666;
+    background-color: #f5f5f5;
+    padding: 0.2rem 0.4rem;
+    border-radius: 3px;
+    text-align: center;
+    height: fit-content;
+}
+
+.content {
+    flex: 1;
+}
+
+.content h3 {
+    margin-bottom: 0.2rem;
+}
+
+.content p {
+    margin-bottom: 0.5rem;
+}
+
+.content p:last-child {
+    margin-bottom: 0;
+}
+
+/* Links */
+a {
+    color: #0066cc;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Social links and external links with icons */
+a[target="_blank"] i {
+    margin-right: 0.3rem;
+}
+
+/* Remove arrow for links that have FontAwesome icons */
+a[target="_blank"]:has(i):after {
+    content: "";
+}
+
+/* Keep arrow for links without icons */
+a[target="_blank"]:not(:has(i)):after {
+    content: " ↗";
+    font-size: 0.8em;
+    opacity: 0.6;
+}
+
+/* About section special styling */
+#about p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+/* Publications section */
+#publications .content p {
+    font-size: 0.9rem;
+}
+
+/* Memberships and Links sections */
+#memberships .content p,
+#links .content p {
+    margin-bottom: 0.3rem;
+}
+
+/* Teaching section specific styles */
+#teaching h3 {
+    font-size: 1.1rem;
+    margin: 1.5rem 0 1rem 0;
+    padding-bottom: 0.2rem;
+    border-bottom: 1px solid #f0f0f0;
+    color: #555;
+}
+
+#teaching h3:first-of-type {
+    margin-top: 0;
+}
+
+#teaching em {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+/* Footer */
+footer {
+    margin-top: 3rem;
+    padding-top: 1rem;
+    border-top: 1px solid #eee;
+    color: #666;
+    font-size: 0.85rem;
+    text-align: center;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    body {
+        padding: 1rem 0.5rem;
+    }
+    
+    .entry {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .date {
+        align-self: flex-start;
+        width: fit-content;
+    }
+    
+    header h1 {
+        font-size: 1.5rem;
+    }
+    
+    .contact-info {
+        font-size: 0.8rem;
+    }
+}
+
+/* Print styles */
+@media print {
+    body {
+        max-width: none;
+        margin: 0;
+        padding: 1rem;
+        font-size: 12pt;
+        line-height: 1.4;
+    }
+    
+    header {
+        margin-bottom: 1rem;
+    }
+    
+    section {
+        margin-bottom: 1rem;
+        break-inside: avoid;
+    }
+    
+    .entry {
+        break-inside: avoid;
+        margin-bottom: 0.8rem;
+    }
+    
+    a[target="_blank"]:after {
+        content: "";
+    }
+    
+    a {
+        color: #000;
+        text-decoration: none;
+    }
+    
+    footer {
+        margin-top: 2rem;
+    }
+}

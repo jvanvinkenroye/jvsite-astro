@@ -1,0 +1,5 @@
+pelican[markdown]
+markdown
+typogrify
+pybtex
+pybtex-docutils
