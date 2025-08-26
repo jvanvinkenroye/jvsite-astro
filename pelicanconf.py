@@ -19,7 +19,7 @@ DISPLAY_PAGES_ON_MENU = True
 DISPLAY_CATEGORIES_ON_MENU = False
 
 # Theme and appearance
-THEME = 'themes/academic'
+THEME = 'themes/minimal'
 
 # Static files
 STATIC_PATHS = ['images', 'extra']

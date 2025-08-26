@@ -1,3 +1,5 @@
+/* Minimal Academic Theme - Inspired by vene.ro */
+
 /* Reset and base styles */
 * {
     margin: 0;
@@ -10,114 +12,45 @@ body {
     line-height: 1.6;
     color: #333;
     background-color: #fff;
-    max-width: 800px;
+    max-width: 900px;
     margin: 0 auto;
-    padding: 2rem 1rem;
+    padding: 2rem 1.5rem;
+    font-size: 16px;
 }
 
-/* Header */
-header {
-    margin-bottom: 2rem;
-}
-
-header h1 {
+/* Typography */
+h1 {
     font-size: 2rem;
     font-weight: 600;
     margin-bottom: 0.5rem;
-}
-
-.contact-info {
-    color: #666;
-    font-size: 0.9rem;
-}
-
-.contact-info a {
-    color: #0066cc;
-    text-decoration: none;
-}
-
-.contact-info a:hover {
-    text-decoration: underline;
-}
-
-.contact-info i {
-    margin-right: 0.3rem;
-    width: 1em;
-}
-
-/* Main content */
-main {
-    margin-bottom: 2rem;
-}
-
-section {
-    margin-bottom: 2rem;
+    color: #222;
 }
 
 h2 {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     font-weight: 600;
-    margin-bottom: 1rem;
-    border-bottom: 1px solid #eee;
+    margin: 2rem 0 1rem 0;
+    color: #333;
+    border-bottom: 1px solid #ddd;
     padding-bottom: 0.3rem;
 }
 
-h2 i {
-    margin-right: 0.5rem;
-    color: #666;
-    width: 1.2em;
-}
-
 h3 {
-    font-size: 1rem;
+    font-size: 1.1rem;
     font-weight: 600;
-    margin-bottom: 0.3rem;
+    margin: 1.5rem 0 0.5rem 0;
+    color: #444;
 }
 
 h4 {
-    font-size: 0.95rem;
+    font-size: 1rem;
     font-weight: 600;
-    margin-bottom: 0.2rem;
-    color: #333;
+    margin: 1rem 0 0.3rem 0;
+    color: #555;
 }
 
 p {
-    margin-bottom: 0.8rem;
-}
-
-/* Entry layout (CV-style entries) */
-.entry {
-    display: flex;
-    margin-bottom: 1.5rem;
-    gap: 1rem;
-}
-
-.date {
-    flex: 0 0 80px;
-    font-family: "SF Mono", Monaco, Consolas, monospace;
-    font-size: 0.85rem;
-    color: #666;
-    background-color: #f5f5f5;
-    padding: 0.2rem 0.4rem;
-    border-radius: 3px;
-    text-align: center;
-    height: fit-content;
-}
-
-.content {
-    flex: 1;
-}
-
-.content h3 {
-    margin-bottom: 0.2rem;
-}
-
-.content p {
-    margin-bottom: 0.5rem;
-}
-
-.content p:last-child {
-    margin-bottom: 0;
+    margin-bottom: 1rem;
 }
 
 /* Links */
@@ -130,112 +63,196 @@ a:hover {
     text-decoration: underline;
 }
 
-/* Social links and external links with icons */
-a[target="_blank"] i {
+/* Navigation */
+.main-nav {
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #eee;
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    padding: 0;
+    margin: 0;
+}
+
+.main-nav li {
+    margin: 0;
+}
+
+.main-nav a {
+    color: #666;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 0;
+}
+
+.main-nav a:hover {
+    color: #0066cc;
+    text-decoration: underline;
+}
+
+/* Header section */
+.header {
+    margin-bottom: 2rem;
+    text-align: left;
+}
+
+.contact-info {
+    color: #666;
+    font-size: 0.95rem;
+    margin-top: 0.5rem;
+}
+
+.contact-info i {
     margin-right: 0.3rem;
+    width: 1em;
 }
 
-/* Remove arrow for links that have FontAwesome icons */
-a[target="_blank"]:has(i):after {
-    content: "";
+/* Main content structure */
+main {
+    margin-bottom: 2rem;
 }
 
-/* Keep arrow for links without icons */
-a[target="_blank"]:not(:has(i)):after {
-    content: " ↗";
-    font-size: 0.8em;
-    opacity: 0.6;
+section {
+    margin-bottom: 2.5rem;
 }
 
-/* About section special styling */
-#about p {
-    font-size: 1rem;
-    margin-bottom: 1rem;
+/* CV Entry Layout - Clean and minimal */
+.entry {
+    margin-bottom: 1.5rem;
+    padding-left: 0;
 }
 
-/* Publications section */
-#publications .content p {
-    font-size: 0.9rem;
-}
-
-/* Memberships and Links sections */
-#memberships .content p,
-#links .content p {
+.entry-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
     margin-bottom: 0.3rem;
 }
 
-/* Teaching section specific styles */
-#teaching h3 {
-    font-size: 1.1rem;
-    margin: 1.5rem 0 1rem 0;
-    padding-bottom: 0.2rem;
-    border-bottom: 1px solid #f0f0f0;
+.entry-title {
+    font-weight: 600;
+    color: #333;
+}
+
+.entry-date {
+    font-size: 0.9rem;
+    color: #666;
+    font-style: italic;
+}
+
+.entry-org {
+    font-weight: 500;
     color: #555;
-}
-
-#teaching h3:first-of-type {
-    margin-top: 0;
-}
-
-#teaching em {
-    color: #666;
-    font-size: 0.9rem;
-}
-
-/* Bibliography/Publications section styles */
-.publications-list {
-    /* Container for all publications */
-}
-
-.publications-list .publication {
-    display: flex;
-    margin-bottom: 1.5rem;
-    gap: 1rem;
-}
-
-.publications-list .publication-year {
-    flex: 0 0 80px;
-    font-family: "SF Mono", Monaco, Consolas, monospace;
-    font-size: 0.85rem;
-    color: #666;
-    background-color: #f5f5f5;
-    padding: 0.2rem 0.4rem;
-    border-radius: 3px;
-    text-align: center;
-    height: fit-content;
-}
-
-.publications-list .publication-content {
-    flex: 1;
-    font-size: 0.9rem;
-}
-
-.publications-list .publication-content .author {
-    font-weight: normal;
-}
-
-.publications-list .publication-content .author.highlight {
-    font-weight: 600;
-}
-
-.publications-list .publication-content .title {
-    font-weight: 600;
     margin-bottom: 0.2rem;
 }
 
-.publications-list .publication-content .venue {
+.entry-description {
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.entry-description em {
+    color: #777;
+    font-size: 0.9rem;
+}
+
+/* Publications - vene.ro style */
+.publications-list {
+    /* Use default list styling */
+}
+
+.publications-list ul {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+}
+
+.publications-list li {
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}
+
+.publication-entry {
+    margin-bottom: 1rem;
+}
+
+.publication-authors {
+    font-weight: normal;
+}
+
+.publication-authors .highlight,
+.publication-authors strong {
+    font-weight: 600;
+    color: #222;
+}
+
+.publication-title {
     font-style: italic;
-    color: #555;
+    margin: 0.2rem 0;
 }
 
-.publications-list .publication-content .doi-link {
+.publication-venue {
+    color: #666;
+    font-size: 0.95rem;
+}
+
+.publication-year {
+    color: #666;
+    font-weight: 500;
+}
+
+.publication-links {
+    font-size: 0.9rem;
+    margin-top: 0.3rem;
+}
+
+.publication-links a {
+    margin-right: 0.5rem;
     color: #0066cc;
-    text-decoration: none;
-    font-size: 0.85rem;
 }
 
-.publications-list .publication-content .doi-link:hover {
-    text-decoration: underline;
+.publication-links a:before {
+    content: "[";
+}
+
+.publication-links a:after {
+    content: "]";
+}
+
+/* Simple bullet list for publications */
+.pub-list {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+}
+
+.pub-list li {
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}
+
+/* Memberships and links */
+.membership-list, .link-list {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+}
+
+.membership-list li, .link-list li {
+    margin-bottom: 0.5rem;
+}
+
+/* Icons */
+i {
+    margin-right: 0.3rem;
+}
+
+h2 i {
+    margin-right: 0.5rem;
+    color: #666;
+    width: 1.2em;
 }
 
 /* Footer */
@@ -251,25 +268,31 @@ footer {
 /* Responsive design */
 @media (max-width: 600px) {
     body {
-        padding: 1rem 0.5rem;
+        padding: 1rem 0.75rem;
+        font-size: 15px;
     }
     
-    .entry {
+    .main-nav ul {
         flex-direction: column;
-        gap: 0.5rem;
+        gap: 1rem;
     }
     
-    .date {
-        align-self: flex-start;
-        width: fit-content;
-    }
-    
-    header h1 {
+    h1 {
         font-size: 1.5rem;
     }
     
+    h2 {
+        font-size: 1.2rem;
+    }
+    
+    .entry-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.2rem;
+    }
+    
     .contact-info {
-        font-size: 0.8rem;
+        font-size: 0.85rem;
     }
 }
 
@@ -279,12 +302,8 @@ footer {
         max-width: none;
         margin: 0;
         padding: 1rem;
-        font-size: 12pt;
+        font-size: 11pt;
         line-height: 1.4;
-    }
-    
-    header {
-        margin-bottom: 1rem;
     }
     
     section {
@@ -297,16 +316,54 @@ footer {
         margin-bottom: 0.8rem;
     }
     
-    a[target="_blank"]:after {
-        content: "";
-    }
-    
     a {
         color: #000;
         text-decoration: none;
     }
     
+    .publication-links a:before,
+    .publication-links a:after {
+        content: "";
+    }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #1a1a1a;
+        color: #e0e0e0;
+    }
+    
+    .main-nav {
+        border-bottom-color: #444;
+    }
+    
+    .main-nav a {
+        color: #b0b0b0;
+    }
+    
+    .main-nav a:hover {
+        color: #4a9eff;
+    }
+    
+    h1, h2, h3, h4 {
+        color: #f0f0f0;
+    }
+    
+    h2 {
+        border-bottom-color: #444;
+    }
+    
+    .contact-info {
+        color: #b0b0b0;
+    }
+    
+    a {
+        color: #4a9eff;
+    }
+    
     footer {
-        margin-top: 2rem;
+        border-top-color: #444;
+        color: #888;
     }
 }

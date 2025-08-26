@@ -10,7 +10,17 @@
       "mcp__mcpm_profile_dev__playwright_browser_click",
       "mcp__mcpm_profile_dev__playwright_browser_resize",
       "WebFetch(domain:vene.ro)",
-      "Bash(wget:*)"
+      "Bash(wget:*)",
+      "Bash(git add:*)",
+      "Bash(pelican:*)",
+      "Bash(source:*)",
+      "WebSearch",
+      "WebFetch(domain:www.researchgate.net)",
+      "WebFetch(domain:scholar.google.com)",
+      "WebFetch(domain:puma.ub.uni-stuttgart.de)",
+      "WebFetch(domain:orcid.org)",
+      "WebFetch(domain:pub.orcid.org)",
+      "mcp__mcpm_profile_dev__basic-memory_write_note"
     ],
     "deny": [],
     "ask": []
