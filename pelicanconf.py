@@ -19,7 +19,7 @@ DISPLAY_PAGES_ON_MENU = True
 DISPLAY_CATEGORIES_ON_MENU = False
 
 # Theme and appearance
-THEME = 'themes/minimal'
+THEME = 'themes/academic'
 
 # Static files
 STATIC_PATHS = ['images', 'extra']
@@ -55,6 +55,9 @@ PAGINATED_TEMPLATES = {}
 # Article settings - we'll use pages instead
 ARTICLE_URL = 'posts/{slug}.html'
 ARTICLE_SAVE_AS = 'posts/{slug}.html'
+
+# Profile photo
+PROFILE_PHOTO = '/images/profile.jpg'
 
 # Social widget
 SOCIAL = (

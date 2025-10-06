@@ -12,7 +12,7 @@ Status: published
         <span class="entry-date">aktuell</span>
     </div>
     <div class="entry-org"><strong>Universität Stuttgart</strong> - Universitäts-IT</div>
-    <div class="entry-description">Systembetreuung, Support und Projektmanagement sowie Lehre</div>
+    <div class="entry-description">Anwendungsbetreuung, Projektmanagement, Koordination von Benutzerberatung</div>
 </div>
 
 <div class="entry">
