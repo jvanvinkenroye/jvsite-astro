@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+<article>
+    {{ page.content }}
+
+    {% if publications %}
+    <div class="publications-list">
+        <ul>
+        {% for key, year, text, bibtex, pdf, slides, poster in publications %}
+            <li>
+                {{ text }}
+                {% if pdf %}
+                [<a href="{{ pdf }}" target="_blank">PDF</a>]
+                {% endif %}
+                {% if slides %}
+                [<a href="{{ slides }}" target="_blank">Slides</a>]
+                {% endif %}
+                {% if poster %}
+                [<a href="{{ poster }}" target="_blank">Poster</a>]
+                {% endif %}
+            </li>
+        {% endfor %}
+        </ul>
+    </div>
+    {% else %}
+    <p><em>No publications found.</em></p>
+    {% endif %}
+</article>
+{% endblock %}
