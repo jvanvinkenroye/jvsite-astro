@@ -22,9 +22,23 @@ pelican content -o output -s pelicanconf.py
 # Check if build was successful
 if [ $? -eq 0 ]; then
     echo "✅ Build successful!"
+
+    # Generate CV PDF from HTML
+    echo "📄 Generating CV PDF..."
+    if command -v weasyprint &> /dev/null; then
+        weasyprint output/cv.html output/files/cv_jan_vanvinkenroye.pdf 2>/dev/null
+        if [ $? -eq 0 ]; then
+            echo "✅ CV PDF generated: output/files/cv_jan_vanvinkenroye.pdf"
+        else
+            echo "⚠️  Warning: CV PDF generation failed"
+        fi
+    else
+        echo "⚠️  Warning: weasyprint not found, skipping PDF generation"
+    fi
+
     echo "🌐 Site generated in: $(pwd)/output/"
     echo "📂 Open file://$(pwd)/output/index.html to view"
-    
+
     # Optionally serve the site locally
     if command -v python3 &> /dev/null; then
         echo ""

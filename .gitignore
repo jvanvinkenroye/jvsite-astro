@@ -1,0 +1,29 @@
+# Pelican
+output/
+*.pid
+cache/
+__pycache__/
+
+# Python
+*.pyc
+*.pyo
+venv/
+.venv/
+*.egg-info/
+
+# Deployment configuration (contains sensitive credentials)
+.env
+
+# macOS
+.DS_Store
+
+# Editor files
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+
+# Temporary files
+*.tmp
+*.bak

@@ -87,5 +87,58 @@ Hafer, J., Bremer, C., Himpsl-Gutermann, K., Köhler, T., Thillosen, A., & **Van
 
 [GitHub](https://github.com/jvanvinkenroye) • [LinkedIn](https://www.linkedin.com/in/jvanvinkenroye/) • [Mastodon](https://higher-edu.social/@jvanvinkenroye) • [WhatsApp](http://wa.me/+491711854655)
 
+## 🚀 Development & Deployment
+
+This website is built with [Pelican](https://getpelican.com/) static site generator.
+
+### Building the Site
+
+```bash
+# Build the site
+./build.sh
+
+# Or use make
+make html
+```
+
+### Local Development Server
+
+```bash
+# Start development server with auto-reload at http://localhost:8000
+./serve.sh
+
+# Or use make
+make devserver
+```
+
+### Deployment
+
+1. Copy the environment configuration example:
+   ```bash
+   cp .env.example .env
+   ```
+
+2. Edit `.env` and fill in your server details:
+   ```bash
+   export DEPLOY_USER="your_ssh_username"
+   export DEPLOY_HOST="your.server.com"
+   export DEPLOY_PATH="/var/www/html"
+   export DEPLOY_PORT="22"
+   ```
+
+3. Deploy to your server:
+   ```bash
+   # Test first with dry-run
+   ./deploy.sh --dry-run
+
+   # Deploy to server
+   ./deploy.sh
+
+   # Verbose output
+   ./deploy.sh --verbose
+   ```
+
+**Note:** Make sure you have SSH key authentication set up for passwordless deployment.
+
 ---
 © 2024 Jan Vanvinkenroye
