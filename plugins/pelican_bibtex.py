@@ -90,6 +90,9 @@ def add_publications(generator):
                              slides,
                              poster))
 
+    # Sort publications by year (newest first)
+    publications.sort(key=lambda x: int(x[1]) if x[1] else 0, reverse=True)
+
     generator.context['publications'] = publications
 
 

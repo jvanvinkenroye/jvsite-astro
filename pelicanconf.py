@@ -22,7 +22,7 @@ DISPLAY_CATEGORIES_ON_MENU = False
 THEME = 'themes/minimal'
 
 # Static files
-STATIC_PATHS = ['images', 'extra']
+STATIC_PATHS = ['images', 'extra', 'files']
 EXTRA_PATH_METADATA = {
     'extra/favicon.ico': {'path': 'favicon.ico'},
 }

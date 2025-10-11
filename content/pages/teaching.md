@@ -6,18 +6,110 @@ Status: published
 
 ## <i class="fas fa-chalkboard-teacher"></i> Lehre
 
+In der Lehre bin ich stets bestrebt, für die Lernenden eine Umgebung zu bieten, in denen expansives Lernen gelingen kann. Meine didaktischen Bezüge liegen im "Construcktive Alignment" und der "Ermöglichungsdidaktik". Lehre (immer neu) gestalten ist eine meiner Leidenschaften so dass ich entsprechende Gelegenheiten gern nutze.
+
+Meine Themenfelder: Allgemeine Psychologie (Kognition, Wahrnehmung, Denken, Lernen), Sozial- und Medienpsycholigie, (handlungsorientierte) Medienpädagogik, empirische Forschungsmethoden und Statistik, (Online) Beratung in der Sozialen Arbeit und Erwachsenenbildung, Förderung von Digitalisierungsbezogenen Kompetenzen, Mediendidaktik in Schule, Programmierung mit Python, Einführung Linux
+
 ### Aktuelle Lehraufträge
 
 <div class="entry">
     <div class="entry-header">
-        <span class="entry-title"><a href="https://www.hm.edu/" target="_blank">Hochschule München</a></span>
+        <span class="entry-title"><a href="https://www.macromedia-fachhochschule.de/" target="_blank">Macromedia Hochschule, Stuttgart</a></span>
+        <span class="entry-date">2025</span>
+    </div>
+    <div class="entry-description">
+        „Entwicklungspsychologie" - WiSe 2025 (Psychologie B.Sc.)
+    </div>
+</div>
+
+<div class="entry">
+    <div class="entry-header">
+        <span class="entry-title"><a href="https://www.hs-heilbronn.de/" target="_blank">Hochschule Heilbronn</a></span>
         <span class="entry-date">2024-2025</span>
     </div>
     <div class="entry-description">
-        „Gesellschaftliche Aspekte der Digitalisierung/Mediatisierung" - SoSe 2024, SoSe 2025<br>
-        <em>M.A. Forschungsmethoden und Digitalisierung in der Sozialen Arbeit</em>
+        „Grundlagen empirischer Forschungsmethoden" - WiSe 2025<br>
+        „Experimentierpraktikum" - WiSe 2025<br>
+        <em>B.Sc. Angewandte Informatik</em>
     </div>
 </div>
+
+<div class="entry">
+    <div class="entry-header">
+        <span class="entry-title"><a href="https://www.eh-ludwigsburg.de/" target="_blank">EH Ludwigsburg</a></span>
+        <span class="entry-date">seit 2014</span>
+    </div>
+    <div class="entry-description">
+        „Medienpädagogische Praxisprojekte in der Sozialen Arbeit" (1,5 SWS)<br>
+        Themen und Anwendungsfelder: Soziale Medien, Digitale Spiele,<br>
+        <em>B.A. Soziale Arbeit, B.A. Religionspädagogik, B.A. Diakoniewissenschaft</em>
+    </div>
+</div>
+
+<div class="entry">
+    <div class="entry-header">
+        <span class="entry-title"><a href="https://www.tik.uni-stuttgart.de/" target="_blank">Universität Stuttgart, TIK</a></span>
+        <span class="entry-date">2018-heute</span>
+    </div>
+    <div class="entry-description">
+        „Kreativ-Treffpunkt Makerspace: Digitale Innovation erleben & gestalten" (2 SWS)<br>
+        „Studentisches Arbeiten mit Open Source Anwendungen und Betriebssystemen" (2 SWS)<br>
+        „Einführung in die Web-Programmierung" (2 SWS)<br>
+        <em>Programm Studienübergreifende Schlüsselqualifikationen</em>
+    </div>
+</div>
+
+<div class="entry">
+    <div class="entry-header">
+        <span class="entry-title"><a href="https://www.th-koeln.de/" target="_blank">TH Köln, Fachbereich Sozialwesen</a></span>
+        <span class="entry-date">2023-2024</span>
+    </div>
+    <div class="entry-description">
+        „Einführung in die Onlineberatung" - SoSe 2023, WiSe 2023/2024, SoSe 2024, WiSe 2024<br>
+        <em>B.A. Soziale Arbeit</em>
+    </div>
+</div>
+
+
+### Frühere Lehraufträge
+
+<div class="entry">
+    <div class="entry-header">
+        <span class="entry-title"><a href="https://www.eh-berlin.de/" target="_blank">EH Berlin</a></span>
+        <span class="entry-date">2025</span>
+    </div>
+    <div class="entry-description">
+        „Qualitative Forschung in Religions- und Gemeindepädagogik" - SoSe 2025<br>
+        <em>B.A. Religions- und Gemeindepädagogik</em>
+    </div>
+</div>
+
+<div class="entry">
+    <div class="entry-header">
+        <span class="entry-title"><a href="https://www.dhbw-stuttgart.de/" target="_blank">DHBW Stuttgart</a></span>
+        <span class="entry-date">2025</span>
+    </div>
+    <div class="entry-description">
+        „Allgemeine Psychologie", „Sozialpsychologie"<br>
+        <em>B.A. Soziale Arbeit</em>
+    </div>
+</div>
+
+
+<div class="entry">
+    <div class="entry-header">
+        <span class="entry-title"><a href="https://www.eh-ludwigsburg.de/" target="_blank">EH Ludwigsburg</a></span>
+        <span class="entry-date">seit 2014</span>
+    </div>
+    <div class="entry-description">
+        „Einführung in die Medienpädagogik" (3 SWS)<br>
+        „Medienpädagogische Praxisprojekte in der Sozialen Arbeit" (1,5 SWS)<br>
+        „Medienpädagogische Konzepte in der Sozialen Arbeit entwickeln" (2 SWS)<br>
+        Themen und Anwendungsfelder: Soziale Medien, Digitale Spiele, Medienpädagogisches Making<br>
+        <em>B.A. Soziale Arbeit, B.A. Religionspädagogik, B.A. Diakoniewissenschaft</em>
+    </div>
+</div>
+
 
 <div class="entry">
     <div class="entry-header">
@@ -32,51 +124,17 @@ Status: published
     </div>
 </div>
 
-<div class="entry">
-    <div class="entry-header">
-        <span class="entry-title"><a href="https://www.eh-ludwigsburg.de/" target="_blank">EH Ludwigsburg</a></span>
-        <span class="entry-date">seit 2014</span>
-    </div>
-    <div class="entry-description">
-        „Einführung in die Medienpädagogik" - jedes Semester (3 SWS)<br>
-        <em>B.A. Soziale Arbeit, B.A. Religionspädagogik, B.A. Diakoniewissenschaft</em>
-    </div>
-</div>
 
 <div class="entry">
     <div class="entry-header">
-        <span class="entry-title"><a href="https://www.tik.uni-stuttgart.de/" target="_blank">Universität Stuttgart, TIK</a></span>
-        <span class="entry-date">2018-heute</span>
+        <span class="entry-title"><a href="https://www.hm.edu/" target="_blank">Hochschule München</a></span>
+        <span class="entry-date">2024</span>
     </div>
     <div class="entry-description">
-        „Studentisches Arbeiten mit Open Source Anwendungen und Betriebssystemen" (2 SWS)<br>
-        <em>Programm Studienübergreifende Schlüsselqualifikationen</em>
+        „Gesellschaftliche Aspekte der Digitalisierung/Mediatisierung" - SoSe 2024<br>
+        <em>M.A. Forschungsmethoden und Digitalisierung in der Sozialen Arbeit</em>
     </div>
 </div>
-
-<div class="entry">
-    <div class="entry-header">
-        <span class="entry-title"><a href="https://www.th-koeln.de/" target="_blank">TH Köln, Fachbereich Sozialwesen</a></span>
-        <span class="entry-date">2023-2024</span>
-    </div>
-    <div class="entry-description">
-        „Einführung in die Onlineberatung" - SoSe 2023, WiSe 2024, SoSe 2024<br>
-        <em>B.A. Soziale Arbeit</em>
-    </div>
-</div>
-
-<div class="entry">
-    <div class="entry-header">
-        <span class="entry-title"><a href="https://www.eh-berlin.de/" target="_blank">EH Berlin</a></span>
-        <span class="entry-date">2025</span>
-    </div>
-    <div class="entry-description">
-        „Qualitative Forschung in Religions- und Gemeindepädagogik" - SoSe 2025<br>
-        <em>B.A. Religions- und Gemeindepädagogik</em>
-    </div>
-</div>
-
-### Frühere Lehraufträge
 
 <div class="entry">
     <div class="entry-header">
@@ -92,6 +150,7 @@ Status: published
         „Pädagogische Psychologie" - WiSe 2024 (Psychologie B.Sc.)
     </div>
 </div>
+
 
 <div class="entry">
     <div class="entry-header">
@@ -122,8 +181,10 @@ Status: published
         <span class="entry-date">2019-2022</span>
     </div>
     <div class="entry-description">
-        „Einführung in die kollegiale Beratung" (2 SWS), „Organisatorische Strukturen der Beruflichen Bildung" (3 SWS)<br>
-        <em>Bildungswissenschaften B.A., M.A. Berufliche Bildung und Ingenieurwissenschaften</em>
+        „Einführung in die kollegiale Beratung" (2 SWS)<br>
+        „Organisatorische Strukturen der Beruflichen Bildung" (3 SWS)<br>
+        „Making in der Biologiedidaktik" (2 SWS)<br>
+        <em>Bildungswissenschaften B.A., M.A. Berufliche Bildung und Ingenieurwissenschaften, B.Ed. Sonderpädagogik</em>
     </div>
 </div>
 
@@ -166,23 +227,48 @@ Status: published
         <span class="entry-date">2013-2015</span>
     </div>
     <div class="entry-description">
-        „Wissenschaftliches Arbeiten und Selbstmanagement" (5 SWS), „Soziale Gruppenarbeit als Methode der Sozialen Arbeit" (3 SWS), „Einführung in die Sozialinformatik" (3 SWS)<br>
+        „Wissenschaftliches Arbeiten und Selbstmanagement" - WiSe 2013/2014 bis WiSe 2014/2015 (5 SWS)<br>
+        „Soziale Gruppenarbeit als Methode der Sozialen Arbeit" - WiSe 2014 bis SoSe 2015 (3 SWS)<br>
+        „Einführung in die Sozialinformatik" - SoSe 2014 bis WiSe 2014/2015 (3 SWS)<br>
         <em>B.A. Soziale Arbeit</em>
     </div>
 </div>
 
 <div class="entry">
     <div class="entry-header">
-        <span class="entry-title"><a href="https://www.ib-hochschule.de/" target="_blank">IB Hochschule Berlin</a> / <a href="https://www.akkon-hochschule.de/" target="_blank">Akkon Hochschule Berlin</a></span>
-        <span class="entry-date">2019-2024</span>
+        <span class="entry-title"><a href="https://www.ib-hochschule.de/" target="_blank">IB Hochschule Berlin, Studienzentrum Stuttgart</a></span>
+        <span class="entry-date">2019-2020</span>
     </div>
     <div class="entry-description">
-        „Einführung in die qualitative Forschung", „Forschungsmethoden II" - WiSe 2019 - SoSe 2020 (Angewandte Psychologie B.Sc.)<br>
-        „Quantitative Forschungsmethoden in der Sozialen Arbeit" - SoSe 2022, WiSe 2022/2023 (Soziale Arbeit B.A.)<br>
-        „Psychologische Grundlagen der Sozialen Arbeit" - WiSe 2023, SoSe 2023, WiSe 2024 (Soziale Arbeit B.A.)<br>
-        <em>IB Hochschule Berlin, Akkon Hochschule Berlin</em>
+        „Einführung in die qualitative Forschung", „Forschungsmethoden II" - WiSe 2019 - SoSe 2020<br>
+        <em>Angewandte Psychologie B.Sc.</em>
     </div>
 </div>
+
+<div class="entry">
+    <div class="entry-header">
+        <span class="entry-title"><a href="https://www.akkon-hochschule.de/" target="_blank">Akkon Hochschule Berlin</a></span>
+        <span class="entry-date">2022-2024</span>
+    </div>
+    <div class="entry-description">
+        „Quantitative Forschungsmethoden in der Sozialen Arbeit" - SoSe 2022, WiSe 2022/2023<br>
+        „Psychologische Grundlagen der Sozialen Arbeit" - WiSe 2023, SoSe 2023, WiSe 2024<br>
+        <em>Soziale Arbeit B.A.</em>
+    </div>
+</div>
+
+<div class="entry">
+    <div class="entry-header">
+        <span class="entry-title"><a href="https://www.th-koeln.de/" target="_blank">TH Köln, Fachbereich Sozialwesen</a></span>
+        <span class="entry-date">2023-2024</span>
+    </div>
+    <div class="entry-description">
+        „Einführung in die Onlineberatung" - SoSe 2023, WiSe 2023/2024, SoSe 2024, WiSe 2024<br>
+        "Onlineberatung und Barrierefreiheit" SoSe 2023<br>
+        <em>B.A. Soziale Arbeit</em>
+    </div>
+</div>
+
 
 ### Berufskolleg
 
@@ -193,7 +279,7 @@ Status: published
     </div>
     <div class="entry-description">
         Unterricht in: Sozialpädagogik, Psychologie/Pädagogik, Ethik und Informatik<br>
-        <em>Berufskolleg</em>
+        <em>Duales Berufskolleg Sozialwesen, Berufskolleg Fachhochschulreife, Berufskolleg Sozialpädagogik</em>
     </div>
 </div>
 
