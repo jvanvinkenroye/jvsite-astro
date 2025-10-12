@@ -3,4 +3,4 @@ markdown
 typogrify
 pybtex
 pybtex-docutils
-weasyprint
+rendercv[full]
