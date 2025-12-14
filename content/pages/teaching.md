@@ -6,9 +6,9 @@ Status: published
 
 ## <i class="fas fa-chalkboard-teacher"></i> Lehre
 
-In der Lehre bin ich stets bestrebt, für die Lernenden eine Umgebung zu bieten, in denen expansives Lernen gelingen kann. Meine didaktischen Bezüge liegen im "Construcktive Alignment" und der "Ermöglichungsdidaktik". Lehre (immer neu) gestalten ist eine meiner Leidenschaften so dass ich entsprechende Gelegenheiten gern nutze.
+In der Lehre bin ich stets bestrebt, für die Lernenden eine Umgebung zu bieten, in denen expansives Lernen gelingen kann. Meine didaktischen Bezüge liegen im "Constructive Alignment" und der "Ermöglichungsdidaktik". Lehre (immer neu) gestalten ist eine meiner Leidenschaften so dass ich entsprechende Gelegenheiten gern nutze.
 
-Meine Themenfelder: Allgemeine Psychologie (Kognition, Wahrnehmung, Denken, Lernen), Sozial- und Medienpsycholigie, (handlungsorientierte) Medienpädagogik, empirische Forschungsmethoden und Statistik, (Online) Beratung in der Sozialen Arbeit und Erwachsenenbildung, Förderung von Digitalisierungsbezogenen Kompetenzen, Mediendidaktik in Schule, Programmierung mit Python, Einführung Linux
+Meine Themenfelder: Allgemeine Psychologie (Kognition, Wahrnehmung, Denken, Lernen), Sozial- und Medienpsychologie, (handlungsorientierte) Medienpädagogik, empirische Forschungsmethoden und Statistik, (Online) Beratung in der Sozialen Arbeit und Erwachsenenbildung, Förderung von Digitalisierungsbezogenen Kompetenzen, Mediendidaktik in Schule, Programmierung mit Python, Einführung Linux
 
 ### Aktuelle Lehraufträge
 
@@ -18,7 +18,8 @@ Meine Themenfelder: Allgemeine Psychologie (Kognition, Wahrnehmung, Denken, Lern
         <span class="entry-date">2025</span>
     </div>
     <div class="entry-description">
-        „Entwicklungspsychologie" - WiSe 2025 (Psychologie B.Sc.)
+        „Entwicklungspsychologie" - WiSe 2025<br>
+        <em>Psychologie B.Sc.</em>
     </div>
 </div>
 
@@ -142,12 +143,13 @@ Meine Themenfelder: Allgemeine Psychologie (Kognition, Wahrnehmung, Denken, Lern
         <span class="entry-date">2022-2024</span>
     </div>
     <div class="entry-description">
-        „Empirische Forschung und Statistik" - SoSe 2022 (Betriebswirtschaft B.A.)<br>
-        „Orientierungsprojekt Forschung" - WiSe 2022/2023 (Psychologie B.Sc.)<br>
-        „Medienpsychologie" - SoSe 2023 (Betriebswirtschaft B.A.)<br>
-        „Einführung in die Psychologie", „Pädagogische Psychologie" - WiSe 2023 (Psychologie B.Sc.)<br>
-        „Personalpsychologie", „Sozial- und Medienpsychologie" - SoSe 2024 (Psychologie B.Sc.)<br>
-        „Pädagogische Psychologie" - WiSe 2024 (Psychologie B.Sc.)
+        „Empirische Forschung und Statistik" - SoSe 2022<br>
+        „Orientierungsprojekt Forschung" - WiSe 2022/2023<br>
+        „Medienpsychologie" - SoSe 2023<br>
+        „Einführung in die Psychologie", „Pädagogische Psychologie" - WiSe 2023<br>
+        „Personalpsychologie", „Sozial- und Medienpsychologie" - SoSe 2024<br>
+        „Pädagogische Psychologie" - WiSe 2024<br>
+        <em>Psychologie B.Sc., Betriebswirtschaft B.A.</em>
     </div>
 </div>
 
@@ -195,7 +197,7 @@ Meine Themenfelder: Allgemeine Psychologie (Kognition, Wahrnehmung, Denken, Lern
     </div>
     <div class="entry-description">
         „Potentiale der Ermöglichungsdidaktik", „Einführung in die Mediendidaktik"<br>
-        <em>M.Ed Gymnasiales Lehramt</em>
+        <em>M.Ed. Gymnasiales Lehramt</em>
     </div>
 </div>
 
@@ -217,7 +219,7 @@ Meine Themenfelder: Allgemeine Psychologie (Kognition, Wahrnehmung, Denken, Lern
     </div>
     <div class="entry-description">
         „Allgemeine Psychologie 1 + 2", „Wissenschaftliches Arbeiten"<br>
-        <em>Angewandte Psychologie B.Sc.</em>
+        <em>B.Sc. Angewandte Psychologie</em>
     </div>
 </div>
 
@@ -241,7 +243,7 @@ Meine Themenfelder: Allgemeine Psychologie (Kognition, Wahrnehmung, Denken, Lern
     </div>
     <div class="entry-description">
         „Einführung in die qualitative Forschung", „Forschungsmethoden II" - WiSe 2019 - SoSe 2020<br>
-        <em>Angewandte Psychologie B.Sc.</em>
+        <em>B.Sc. Angewandte Psychologie</em>
     </div>
 </div>
 
@@ -253,7 +255,7 @@ Meine Themenfelder: Allgemeine Psychologie (Kognition, Wahrnehmung, Denken, Lern
     <div class="entry-description">
         „Quantitative Forschungsmethoden in der Sozialen Arbeit" - SoSe 2022, WiSe 2022/2023<br>
         „Psychologische Grundlagen der Sozialen Arbeit" - WiSe 2023, SoSe 2023, WiSe 2024<br>
-        <em>Soziale Arbeit B.A.</em>
+        <em>B.A. Soziale Arbeit</em>
     </div>
 </div>
 
@@ -264,7 +266,7 @@ Meine Themenfelder: Allgemeine Psychologie (Kognition, Wahrnehmung, Denken, Lern
     </div>
     <div class="entry-description">
         „Einführung in die Onlineberatung" - SoSe 2023, WiSe 2023/2024, SoSe 2024, WiSe 2024<br>
-        "Onlineberatung und Barrierefreiheit" SoSe 2023<br>
+        „Onlineberatung und Barrierefreiheit" - SoSe 2023<br>
         <em>B.A. Soziale Arbeit</em>
     </div>
 </div>
