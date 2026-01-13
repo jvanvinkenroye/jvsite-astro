@@ -26,6 +26,7 @@ if pelican content -o output -s pelicanconf.py; then
     if command -v rendercv &> /dev/null; then
         if rendercv render cv_rendercv.yaml >/dev/null 2>&1 && [ -f "rendercv_output/Jan_Vanvinkenroye_CV.pdf" ]; then
             cp rendercv_output/Jan_Vanvinkenroye_CV.pdf output/files/cv_jan_vanvinkenroye.pdf
+            rm -rf rendercv_output
             echo "✅ CV PDF generated: output/files/cv_jan_vanvinkenroye.pdf"
         else
             echo "⚠️  Warning: CV PDF generation failed"
@@ -33,6 +34,9 @@ if pelican content -o output -s pelicanconf.py; then
     else
         echo "⚠️  Warning: rendercv not found, skipping PDF generation"
     fi
+
+    # Clean up rendercv_output if it exists (in case of partial builds)
+    [ -d "rendercv_output" ] && rm -rf rendercv_output
 
     echo "🌐 Site generated in: $(pwd)/output/"
     echo "📂 Open file://$(pwd)/output/index.html to view"
