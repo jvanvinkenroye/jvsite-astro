@@ -38,6 +38,14 @@ if pelican content -o output -s pelicanconf.py; then
     # Clean up rendercv_output if it exists (in case of partial builds)
     [ -d "rendercv_output" ] && rm -rf rendercv_output
 
+    # Generate PDF with teaching assignments list
+    echo "📊 Generating teaching assignments PDF..."
+    if python scripts/generate_teaching_pdf.py; then
+        echo "✅ Teaching PDF generated: output/files/lehrauftraege.pdf"
+    else
+        echo "⚠️  Warning: Teaching PDF generation failed"
+    fi
+
     echo "🌐 Site generated in: $(pwd)/output/"
     echo "📂 Open file://$(pwd)/output/index.html to view"
 
