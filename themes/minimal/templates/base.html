@@ -1,39 +1,63 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="{% block html_lang %}{{ DEFAULT_LANG }}{% endblock html_lang %}">
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{% block title %}{{ SITENAME }}{% endblock title %}</title>
-    <meta name="description" content="Jan Vanvinkenroye - Wissenschaftlicher Mitarbeiter, Sozialarbeiter und Dozent mit Schwerpunkt Digitalisierung in Bildung und Sozialer Arbeit">
-    <meta name="author" content="{{ AUTHOR }}">
-    
-    <!-- FontAwesome and Academicons -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
-    <link rel="stylesheet" href="https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css">
-    
-    <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/main.css" />
-    
-    {% block extra_head %}{% endblock extra_head %}
-</head>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>{% block title %}{{ SITENAME }}{% endblock title %}</title>
+        <meta
+            name="description"
+            content="Jan Vanvinkenroye - Wissenschaftlicher Mitarbeiter, Sozialarbeiter und Dozent mit Schwerpunkt Digitalisierung in Bildung und Sozialer Arbeit"
+        />
+        <meta name="author" content="{{ AUTHOR }}" />
 
-<body>
-    <nav class="main-nav">
-        <ul>
-            <li><a href="{{ SITEURL }}/">Start</a></li>
-            <li><a href="{{ SITEURL }}/publications.html">Publikationen</a></li>
-            <li><a href="{{ SITEURL }}/projekte.html">Projekte</a></li>
-            <li><a href="{{ SITEURL }}/teaching.html">Lehre</a></li>
-            <li><a href="{{ SITEURL }}/cv.html">Lebenslauf</a></li>
-            <li><a href="{{ SITEURL }}/engagement.html">Engagement</a></li>
-        </ul>
-    </nav>
+        <!-- Google Fonts - Vollkorn -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Vollkorn:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap"
+            rel="stylesheet"
+        />
 
-    <main>
-        {% block content %}{% endblock content %}
-    </main>
+        <!-- FontAwesome and Academicons -->
+        <link
+            rel="stylesheet"
+            href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css"
+        />
 
-    <footer>
-        <p>&copy; 2024 {{ AUTHOR }} • Generated with <a href="https://getpelican.com/">Pelican</a></p>
-    </footer>
-</body>
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/main.css"
+        />
+
+        {% block extra_head %}{% endblock extra_head %}
+    </head>
+
+    <body>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="{{ SITEURL }}/">Start</a></li>
+                <li>
+                    <a href="{{ SITEURL }}/publications.html">Publikationen</a>
+                </li>
+                <li><a href="{{ SITEURL }}/projekte.html">Projekte</a></li>
+                <li><a href="{{ SITEURL }}/teaching.html">Lehre</a></li>
+                <li><a href="{{ SITEURL }}/cv.html">Lebenslauf</a></li>
+                <li><a href="{{ SITEURL }}/engagement.html">Engagement</a></li>
+            </ul>
+        </nav>
+
+        <main>{% block content %}{% endblock content %}</main>
+
+        <footer>
+            <p>
+                &copy; {{ CURRENT_YEAR }} {{ AUTHOR }} • Generated with
+                <a href="https://getpelican.com/">Pelican</a>
+            </p>
+        </footer>
+    </body>
 </html>

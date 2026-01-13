@@ -1,6 +1,11 @@
+from datetime import datetime
+
 AUTHOR = 'Jan Vanvinkenroye'
 SITENAME = 'Jan Vanvinkenroye'
 SITEURL = ''
+
+# Dynamic copyright year
+CURRENT_YEAR = datetime.now().year
 
 PATH = 'content'
 
