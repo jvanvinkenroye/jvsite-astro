@@ -49,8 +49,13 @@ class TeachingEntryParser(HTMLParser):
         self.current_class = None
         self.in_entry = False
         self.in_link = False
+        self.in_description = False
+        self.in_em = False
         self.current_url = None
         self.text_buffer = ""
+        self.courses_buffer = ""
+        self.degree_buffer = ""
+        self.div_depth = 0  # Track div nesting inside entry
 
     def handle_starttag(self, tag, attrs):
         attrs_dict = dict(attrs)
@@ -58,31 +63,31 @@ class TeachingEntryParser(HTMLParser):
 
         if tag == 'div' and class_name == 'entry':
             self.in_entry = True
+            self.div_depth = 0
             self.current_entry = {}
+            self.courses_buffer = ""
+            self.degree_buffer = ""
+            return
 
         if self.in_entry:
-            if tag == 'span' and class_name in ['entry-title', 'entry-date']:
+            if tag == 'div':
+                self.div_depth += 1
+                if class_name == 'entry-description':
+                    self.in_description = True
+                    self.courses_buffer = ""
+                    self.degree_buffer = ""
+            elif tag == 'span' and class_name in ['entry-title', 'entry-date']:
                 self.current_class = class_name
-                self.text_buffer = ""
-            elif tag == 'div' and class_name == 'entry-description':
-                self.current_class = 'entry-description'
                 self.text_buffer = ""
             elif tag == 'a' and self.current_class == 'entry-title':
                 self.in_link = True
                 self.current_url = attrs_dict.get('href', '')
-            elif tag == 'em':
-                self.current_class = 'degree-program'
-                self.text_buffer = ""
-            elif tag == 'br':
-                self.text_buffer += "\n"
+            elif tag == 'em' and self.in_description:
+                self.in_em = True
+            elif tag == 'br' and self.in_description and not self.in_em:
+                self.courses_buffer += "\n"
 
     def handle_endtag(self, tag):
-        if tag == 'div' and self.in_entry and self.current_class != 'entry-description':
-            if 'institution' in self.current_entry:
-                self.entries.append(self.current_entry.copy())
-            self.in_entry = False
-            self.current_entry = {}
-
         if self.in_entry:
             if tag == 'span':
                 if self.current_class == 'entry-title':
@@ -92,18 +97,32 @@ class TeachingEntryParser(HTMLParser):
                 elif self.current_class == 'entry-date':
                     self.current_entry['date_range'] = self.text_buffer.strip()
                 self.current_class = None
-            elif tag == 'div' and self.current_class == 'entry-description':
-                self.current_entry['courses'] = self.text_buffer.strip()
-                self.current_class = None
-            elif tag == 'em':
-                self.current_entry['degree_program'] = self.text_buffer.strip()
-                self.current_class = None
+            elif tag == 'em' and self.in_em:
+                self.in_em = False
+            elif tag == 'div':
+                if self.in_description:
+                    self.current_entry['courses'] = self.courses_buffer.strip()
+                    self.current_entry['degree_program'] = self.degree_buffer.strip()
+                    self.in_description = False
+                self.div_depth -= 1
+                if self.div_depth < 0:
+                    # Closing entry div
+                    if 'institution' in self.current_entry:
+                        self.entries.append(self.current_entry.copy())
+                    self.in_entry = False
+                    self.current_entry = {}
+                    self.div_depth = 0
             elif tag == 'a':
                 self.in_link = False
 
     def handle_data(self, data):
         if self.current_class:
             self.text_buffer += data
+        elif self.in_description:
+            if self.in_em:
+                self.degree_buffer += data
+            else:
+                self.courses_buffer += data
 
 
 def parse_teaching_md(filepath: Path) -> list[TeachingEntry]:
@@ -126,15 +145,12 @@ def parse_teaching_md(filepath: Path) -> list[TeachingEntry]:
             parser.feed(section_content)
 
             for entry_data in parser.entries:
-                # Clean up courses text - remove degree program if it's in the courses
-                courses = entry_data.get('courses', '')
-                degree = entry_data.get('degree_program', '')
+                courses = entry_data.get('courses', '').strip()
+                degree = entry_data.get('degree_program', '').strip()
 
-                # Remove the degree program line from courses if present
-                if degree and degree in courses:
-                    courses = courses.replace(degree, '').strip()
-                    # Clean up trailing newlines and commas
-                    courses = re.sub(r'\n+$', '', courses)
+                # Clean up whitespace: normalize newlines and remove extra spaces
+                courses = re.sub(r'\n\s+', '\n', courses)
+                courses = re.sub(r'\n+$', '', courses)
 
                 entry = TeachingEntry(
                     category=category,
