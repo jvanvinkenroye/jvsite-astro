@@ -47,14 +47,14 @@ def add_publications(generator):
         from pybtex.backends import html
         from pybtex.style.formatting import plain
     except ImportError:
-        logger.warn('`pelican_bibtex` failed to load dependency `pybtex`')
+        logger.warning('`pelican_bibtex` failed to load dependency `pybtex`')
         return
 
     refs_file = generator.settings['PUBLICATIONS_SRC']
     try:
         bibdata_all = Parser().parse_file(refs_file)
     except PybtexError as e:
-        logger.warn('`pelican_bibtex` failed to parse file %s: %s' % (
+        logger.warning('`pelican_bibtex` failed to parse file %s: %s' % (
             refs_file,
             str(e)))
         return
