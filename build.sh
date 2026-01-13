@@ -1,4 +1,5 @@
-#!/bin/bash
+#!/usr/bin/env bash
+set -euo pipefail
 
 echo "🔧 Setting up Pelican environment..."
 
@@ -17,19 +18,15 @@ pip install -r requirements.txt
 
 # Generate site
 echo "🏗️  Building site with Pelican..."
-pelican content -o output -s pelicanconf.py
-
-# Check if build was successful
-if [ $? -eq 0 ]; then
+if pelican content -o output -s pelicanconf.py; then
     echo "✅ Build successful!"
 
     # Generate CV PDF with RenderCV
     echo "📄 Generating CV PDF with RenderCV..."
     if command -v rendercv &> /dev/null; then
-        rendercv render cv_rendercv.yaml >/dev/null 2>&1
-        if [ $? -eq 0 ] && [ -f "rendercv_output/Jan_Vanvinkenroye_CV.pdf" ]; then
+        if rendercv render cv_rendercv.yaml >/dev/null 2>&1 && [ -f "rendercv_output/Jan_Vanvinkenroye_CV.pdf" ]; then
             cp rendercv_output/Jan_Vanvinkenroye_CV.pdf output/files/cv_jan_vanvinkenroye.pdf
-            echo "✅ CV PDF generated: output/files/cv_jan_vanvinkenroye.pdf (31 KB)"
+            echo "✅ CV PDF generated: output/files/cv_jan_vanvinkenroye.pdf"
         else
             echo "⚠️  Warning: CV PDF generation failed"
         fi
