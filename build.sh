@@ -38,14 +38,6 @@ if pelican content -o output -s pelicanconf.py; then
     # Clean up rendercv_output if it exists (in case of partial builds)
     [ -d "rendercv_output" ] && rm -rf rendercv_output
 
-    # Generate ODF spreadsheet from teaching.md
-    echo "📊 Generating teaching assignments ODF spreadsheet..."
-    if python scripts/generate_teaching_odf.py; then
-        echo "✅ Teaching ODF generated: output/files/lehrauftraege.ods"
-    else
-        echo "⚠️  Warning: Teaching ODF generation failed"
-    fi
-
     echo "🌐 Site generated in: $(pwd)/output/"
     echo "📂 Open file://$(pwd)/output/index.html to view"
 
