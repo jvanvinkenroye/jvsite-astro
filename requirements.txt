@@ -4,3 +4,4 @@ typogrify
 pybtex
 pybtex-docutils
 rendercv[full]
+odfpy
