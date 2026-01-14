@@ -68,6 +68,7 @@ a:hover {
     margin-bottom: 2rem;
     padding-bottom: 1rem;
     border-bottom: 1px solid #eee;
+    position: relative;
 }
 
 .main-nav ul {
@@ -92,6 +93,42 @@ a:hover {
 .main-nav a:hover {
     color: #0066cc;
     text-decoration: underline;
+}
+
+/* Hamburger menu button */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 2rem;
+    height: 2rem;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 10;
+}
+
+.hamburger-line {
+    width: 2rem;
+    height: 0.2rem;
+    background: #333;
+    border-radius: 10px;
+    transition: all 0.3s linear;
+    position: relative;
+    transform-origin: 1px;
+}
+
+.hamburger.active .hamburger-line:nth-child(1) {
+    transform: rotate(45deg);
+}
+
+.hamburger.active .hamburger-line:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active .hamburger-line:nth-child(3) {
+    transform: rotate(-45deg);
 }
 
 /* Header section */
@@ -285,15 +322,52 @@ footer {
 }
 
 /* Responsive design */
+/* Mobile breakpoint - menu becomes collapsible below this width */
 @media (max-width: 600px) {
     body {
         padding: 1rem 0.75rem;
         font-size: 15px;
     }
 
-    .main-nav ul {
+    /* Show hamburger menu */
+    .hamburger {
+        display: flex;
+    }
+
+    /* Hide menu by default on mobile */
+    .nav-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
         flex-direction: column;
-        gap: 1rem;
+        background-color: #fff;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out;
+        border-bottom: none;
+        gap: 0;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Show menu when active */
+    /* Note: max-height should be adjusted if more menu items are added */
+    .nav-menu.active {
+        max-height: 400px;
+        transition: max-height 0.3s ease-in;
+    }
+
+    .nav-menu li {
+        border-bottom: 1px solid #eee;
+    }
+
+    .nav-menu li:last-child {
+        border-bottom: none;
+    }
+
+    .nav-menu a {
+        display: block;
+        padding: 1rem 0.75rem;
     }
 
     .header {
