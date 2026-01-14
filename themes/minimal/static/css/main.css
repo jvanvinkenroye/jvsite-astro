@@ -322,6 +322,7 @@ footer {
 }
 
 /* Responsive design */
+/* Mobile breakpoint - menu becomes collapsible below this width */
 @media (max-width: 600px) {
     body {
         padding: 1rem 0.75rem;
@@ -350,6 +351,7 @@ footer {
     }
 
     /* Show menu when active */
+    /* Note: max-height should be adjusted if more menu items are added */
     .nav-menu.active {
         max-height: 400px;
         transition: max-height 0.3s ease-in;

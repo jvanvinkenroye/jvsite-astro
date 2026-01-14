@@ -73,7 +73,7 @@
 
                 if (hamburger && navMenu) {
                     hamburger.addEventListener('click', function() {
-                        const isExpanded = hamburger.getAttribute('aria-expanded') === 'true';
+                        const isExpanded = hamburger.getAttribute('aria-expanded') !== 'false';
                         hamburger.setAttribute('aria-expanded', !isExpanded);
                         hamburger.classList.toggle('active');
                         navMenu.classList.toggle('active');
