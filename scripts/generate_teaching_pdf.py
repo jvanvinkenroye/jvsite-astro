@@ -19,9 +19,9 @@ try:
     from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
     from reportlab.lib.units import cm
     from reportlab.platypus import (
-        SimpleDocTemplate, Paragraph, Spacer, Table, TableStyle, PageBreak
+        SimpleDocTemplate, Paragraph, Spacer, Table, TableStyle
     )
-    from reportlab.lib.enums import TA_LEFT, TA_CENTER
+    from reportlab.lib.enums import TA_CENTER
 except ImportError:
     print("Error: reportlab is not installed. Install with: pip install reportlab")
     sys.exit(1)
@@ -45,7 +45,6 @@ class TeachingEntryParser(HTMLParser):
         super().__init__()
         self.entries = []
         self.current_entry = {}
-        self.current_tag = None
         self.current_class = None
         self.in_entry = False
         self.in_link = False
@@ -165,7 +164,7 @@ def parse_teaching_md(filepath: Path) -> list[TeachingEntry]:
     return entries
 
 
-def create_pdf(entries: list[TeachingEntry], output_path: Path):
+def create_pdf(entries: list[TeachingEntry], output_path: Path) -> int:
     """Create a PDF document from the teaching entries."""
     doc = SimpleDocTemplate(
         str(output_path),
