@@ -5,11 +5,16 @@ import '../styles/main.css';
 
 interface Props {
   title?: string;
+  description?: string;
 }
 
-const { title } = Astro.props;
+const { title, description } = Astro.props;
 const siteTitle = 'Jan Vanvinkenroye';
 const pageTitle = title ? `${title} | ${siteTitle}` : siteTitle;
+const pageDescription = description || 'Jan Vanvinkenroye - Wissenschaftlicher Mitarbeiter, Sozialarbeiter und Dozent mit Schwerpunkt Digitalisierung in Bildung und Sozialer Arbeit';
+const siteUrl = 'https://vanvinkenroye.de';
+const currentPath = Astro.url.pathname;
+const canonicalUrl = `${siteUrl}${currentPath}`;
 ---
 
 <!doctype html>
@@ -18,12 +23,24 @@ const pageTitle = title ? `${title} | ${siteTitle}` : siteTitle;
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{pageTitle}</title>
-    <meta
-      name="description"
-      content="Jan Vanvinkenroye - Wissenschaftlicher Mitarbeiter, Sozialarbeiter und Dozent mit Schwerpunkt Digitalisierung in Bildung und Sozialer Arbeit"
-    />
+    <meta name="description" content={pageDescription} />
     <meta name="author" content="Jan Vanvinkenroye" />
+    <link rel="canonical" href={canonicalUrl} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={pageDescription} />
+    <meta property="og:image" content={`${siteUrl}/images/profile.jpg`} />
+    <meta property="og:locale" content="de_DE" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={pageDescription} />
+    <meta name="twitter:image" content={`${siteUrl}/images/profile.jpg`} />
 
     <!-- Google Fonts - Vollkorn -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -45,9 +62,11 @@ const pageTitle = title ? `${title} | ${siteTitle}` : siteTitle;
   </head>
 
   <body>
+    <a href="#main-content" class="skip-link">Zum Inhalt springen</a>
+
     <Navigation />
 
-    <main>
+    <main id="main-content">
       <slot />
     </main>
 

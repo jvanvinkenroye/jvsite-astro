@@ -4,134 +4,138 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is an academic website for Jan Vanvinkenroye built with Pelican static site generator. The site features academic publications managed via BibTeX, with custom plugins for bibliography rendering.
+This is an academic website for Jan Vanvinkenroye built with **Astro** static site generator. The site features academic publications managed via BibTeX, with a custom TypeScript parser for bibliography rendering.
 
 ## Build and Development Commands
 
-### Virtual Environment
-**IMPORTANT**: All Python commands must be run with the virtual environment activated:
 ```bash
-source venv/bin/activate
+# Install dependencies
+npm install
+
+# Development server with hot reload
+npm run dev
+# Then visit http://localhost:4321
+
+# Build for production
+npm run build
+
+# Preview production build
+npm run preview
 ```
-
-### Common Development Workflow
-```bash
-# Build the site
-./build.sh
-# or
-make html
-
-# Development server with auto-reload
-./serve.sh
-# or
-make devserver
-# Then visit http://localhost:8000
-
-# Clean build artifacts
-make clean
-```
-
-### Build Components
-- **Build script**: `build.sh` - Creates venv if needed, installs dependencies, generates site
-- **Serve script**: `serve.sh` - Starts development server with auto-reload at port 8000
-- **Makefile**: Provides targets for setup, html, clean, serve, devserver
 
 ## Project Architecture
 
-### Content Management
-- **Content source**: `content/` directory contains all Markdown files and pages
-- **Main page**: `content/index.md` - Homepage content
-- **Additional pages**: `content/pages/` - Additional site pages
-- **Publications**: `content/publications.bib` - BibTeX bibliography database
+```
+src/
+├── components/         # Astro components
+│   ├── BaseLayout.astro    # Main layout with SEO meta tags
+│   ├── Navigation.astro    # Nav with mobile hamburger menu
+│   ├── Footer.astro
+│   └── CVEntry.astro       # Reusable CV entry component
+├── pages/              # Route pages (file-based routing)
+│   ├── index.astro         # Homepage
+│   ├── publications.astro  # Publications (from BibTeX)
+│   ├── cv.astro            # Curriculum Vitae
+│   ├── teaching.astro      # Teaching positions
+│   ├── projekte.astro      # Projects
+│   ├── engagement.astro    # Memberships
+│   ├── impressum.astro     # Legal notice
+│   └── 404.astro           # Error page
+├── lib/
+│   └── bibtex.ts       # Custom BibTeX parser
+├── data/
+│   └── publications.bib    # BibTeX bibliography
+└── styles/
+    └── main.css        # Global styles
 
-### BibTeX Integration
-- **Custom plugin**: `plugins/pelican_bibtex.py` - Custom Pelican plugin for bibliography rendering
-- The plugin parses `publications.bib` and makes publications available in templates
-- Publications are rendered using pybtex with HTML backend
-- Each publication includes: key, year, formatted text, bibtex source, and optional PDF/slides/poster links
-- Insert publications in Markdown with `[@bibliography]` syntax
-- Configuration in `pelicanconf.py`:
-  - `PUBLICATIONS_SRC`: Path to .bib file
-  - `BIBLIOGRAPHY_START/END`: HTML wrapper tags
+public/                 # Static assets (copied as-is)
+├── images/
+├── files/
+├── robots.txt
+└── favicon.svg
 
-### Theme System
-- **Active theme**: `themes/minimal/` (set in `pelicanconf.py` as `THEME = 'themes/minimal'`)
-- **Inactive theme**: `themes/academic/` - Available but not currently used
-- Theme structure:
-  - `templates/` - Jinja2 templates (base.html, index.html, page.html)
-  - `static/` - CSS, JavaScript, images
+dist/                   # Build output (git-ignored)
+```
 
-### Configuration
-- **Main config**: `pelicanconf.py`
-  - Site metadata (AUTHOR, SITENAME, TIMEZONE='Europe/Berlin', DEFAULT_LANG='de')
-  - Plugin configuration (loads from `plugins/` directory)
-  - Theme selection
-  - URL structure (pages use `{slug}.html` format)
-  - Social media links
-  - Static paths and extra file mappings
-  - Disables article/tag/category features (using pages-only approach)
+## BibTeX Integration
 
-### Output
-- **Generated site**: `output/` directory (git-ignored)
-- Contains the complete static HTML site ready for deployment
-
-## Publication Management
+### Custom Parser
+The custom BibTeX parser in `src/lib/bibtex.ts`:
+- Parses `src/data/publications.bib` at build time
+- Filters entries with `keywords={selected}`
+- Sorts by year (newest first)
+- Cleans LaTeX formatting
 
 ### Adding New Publications
-1. Edit `content/publications.bib`
-2. Add BibTeX entry with standard fields (author, title, year, journal/booktitle, doi, etc.)
-3. Include `keywords={selected}` to display in main list
-4. Rebuild: `make html` or `./build.sh`
+1. Edit `src/data/publications.bib`
+2. Add BibTeX entry with standard fields
+3. Include `keywords={selected}` to display on website
+4. Rebuild: `npm run build`
 
 ### BibTeX Entry Requirements
-- Use standard BibTeX types: `@article`, `@inproceedings`, `@incollection`, `@book`, etc.
+- Use standard types: `@article`, `@inproceedings`, `@incollection`, `@book`
 - Always include: `author`, `title`, `year`
-- Optional but recommended: `doi`, `url`, `keywords`
-- Special fields supported: `pdf`, `slides`, `poster` (for additional resources)
+- Optional: `doi`, `url`, `journal`, `booktitle`, `pages`, `publisher`
+- Add `keywords={selected}` to include in publication list
 
-## Dependencies
+## Configuration
 
-Managed in `requirements.txt`:
-- `pelican[markdown]` - Core static site generator
-- `markdown` - Markdown processing
-- `typogrify` - Typography improvements
-- `pybtex` - BibTeX parsing and formatting
-- `pybtex-docutils` - Additional BibTeX utilities
+### astro.config.mjs
+- `site`: Production URL (https://vanvinkenroye.de)
+- `trailingSlash: 'always'`: Consistent URL format
+- `i18n`: German as default locale
+- Integrations: `@astrojs/sitemap` for SEO
+
+### SEO Features
+- Open Graph meta tags for social sharing
+- Twitter Card support
+- Canonical URLs
+- Sitemap generation
+- robots.txt
+
+## Component Usage
+
+### BaseLayout
+```astro
+<BaseLayout title="Page Title" description="Optional description">
+  <h1>Content</h1>
+</BaseLayout>
+```
+
+### CVEntry
+```astro
+<CVEntry
+  title="Position Title"
+  dateStart="01.2020"
+  dateEnd="heute"
+  organization="Organization Name"
+  url="https://example.com"
+  description="Description text"
+/>
+```
 
 ## Content Editing Guidelines
 
-### Page Format
-Markdown files should include metadata header:
-```markdown
-Title: Page Title
-Date: YYYY-MM-DD
-Status: published
+### Language
+- Default language is German
+- Use `lang="en"` attribute for English content sections
 
-Content here...
+### Icons
+- FontAwesome 5: `<i class="fas fa-icon"></i>`
+- Academicons: `<i class="ai ai-orcid"></i>`
+
+### Styling
+- Vollkorn serif font
+- Link color: #0066cc
+- Mobile-responsive with hamburger menu
+- Print styles included
+
+## Deployment
+
+Build output is in `dist/` directory:
+```bash
+npm run build
+# Upload dist/ contents to web server
 ```
 
-### Mixed HTML/Markdown
-The content uses both Markdown and HTML for layout control:
-- Use Markdown for text formatting
-- Use HTML `<div>` structures for complex layouts (e.g., CV entries)
-- Icons use FontAwesome and Academicons classes
-
-### Language
-- Default language is German (`DEFAULT_LANG = 'de'`)
-- Timezone is Europe/Berlin
-
-## Deployment Notes
-
-The generated `output/` directory contains the complete static site. Deploy by:
-1. Building: `make html`
-2. Uploading `output/` contents to web server
-3. Optionally using GitHub Pages, Netlify, or similar static hosting
-
-## Plugin Architecture
-
-The custom `pelican_bibtex.py` plugin:
-- Hooks into Pelican's `generator_init` signal
-- Parses BibTeX file using pybtex Parser
-- Formats entries with plain style and HTML backend
-- Populates `generator.context['publications']` with formatted data
-- Each publication is a tuple: `(key, year, text, bibtex, pdf, slides, poster)`
+Supports: Netlify, Vercel, GitHub Pages, any static hosting.
