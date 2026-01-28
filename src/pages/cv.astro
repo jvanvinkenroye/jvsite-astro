@@ -1,0 +1,219 @@
+---
+import BaseLayout from '../components/BaseLayout.astro';
+import CVEntry from '../components/CVEntry.astro';
+
+// CV data - could be moved to JSON/YAML files later
+const berufserfahrung = [
+  {
+    title: 'Wissenschaftlicher Mitarbeiter',
+    dateStart: '08.2012',
+    dateEnd: 'heute',
+    organization: 'Universität Stuttgart, TIK',
+    url: 'https://www.tik.uni-stuttgart.de/',
+    description: 'Koordination der Benutzerberatung\nMitarbeit im Makerspace der Universität Stuttgart\nForschung / Lehre im Bereich Mediendidaktik, Digitalisierungsbezogene Kompetenzen\nProjektleitung Projekt „Wissensmanagementool Uniweit"\nBetrieb und Beratung „Onlineumfragen / Klausuren"'
+  },
+  {
+    title: 'Lehrkraft am Berufskolleg',
+    dateStart: '09.2015',
+    dateEnd: 'heute',
+    organization: 'DAA Berufliche Schulen Stuttgart',
+    url: 'https://www.daa-stuttgart.de/',
+    description: 'Unterricht in: Sozialpädagogik, Psychologie / Pädagogik, Ethik und Informatik im Berufskolleg'
+  },
+  {
+    title: 'Lehraufträge an Schulen / Hochschulen',
+    dateStart: '10.2012',
+    dateEnd: 'heute',
+    organization: 'Diverse Hochschulen',
+    description: 'Siehe detaillierte Liste auf der <a href="/teaching/">Teaching-Seite</a>'
+  },
+  {
+    title: 'Lehrkraft',
+    dateStart: '10.2011',
+    dateEnd: '07.2012',
+    organization: 'Christiane-Herzog-Schule, Heilbronn',
+    url: 'https://www.chs-hn.de/',
+    description: 'Unterricht in: Pädagogik/Psychologie am beruflichen Gymnasium, Erziehungslehre am Berufskolleg, Spielpädagogik in der Fachschule für Erzieher'
+  },
+  {
+    title: 'Lehrkraft',
+    dateStart: '08.2010',
+    dateEnd: '07.2011',
+    organization: 'Kolping Bildungswerk Württemberg e.V.',
+    url: 'https://www.kolping-bildungswerk.de/',
+    description: 'Unterricht in: Informatik am Beruflichen Gymnasium, Ethik im Berufskolleg, Pädagogik/Psychologie in der Berufsoberschule'
+  },
+  {
+    title: 'Arbeitsvermittler, Trainer, Lehrer',
+    dateStart: '04.2007',
+    dateEnd: '07.2011',
+    organization: 'Caritas Ludwigsburg-Waiblingen-Enz',
+    url: 'https://www.caritas-ludwigsburg-waiblingen-enz.de/',
+    description: 'Beratung und Coaching von Jugendlichen und Erwachsenen in beruflichen Übergangssituationen\nUnterricht in Ethik und Datenverarbeitung im Berufsvorbereitungs- und Berufseinstiegsjahr'
+  },
+  {
+    title: 'Wissenschaftlicher Mitarbeiter',
+    dateStart: '05.2007',
+    dateEnd: '07.2009',
+    organization: 'ev. Hochschule Ludwigsburg - Institut für angewandte Forschung',
+    url: 'https://www.eh-ludwigsburg.de/',
+    description: 'Planung und Durchführung einer Begleitevaluation für ein Projekt zur Förderung interkultureller Kompetenz'
+  },
+  {
+    title: 'Projektleiter „Computer Clubhouse Esslingen"',
+    dateStart: '04.2005',
+    dateEnd: '12.2006',
+    organization: 'Fachhochschule für Technik Esslingen - IAF Informationssysteme',
+    url: 'https://www.hs-esslingen.de/',
+    description: 'Leitung eines offenen Jugendtreffs mit Schwerpunkt Informatik + Digitale Medien'
+  },
+  {
+    title: 'Sozialpädagoge',
+    dateStart: '03.2005',
+    dateEnd: '07.2008',
+    organization: 'Paulinenpflege Winnenden - Jugendhilfeverbund',
+    url: 'https://www.paulinenpflege.de/',
+    description: 'Ambulante Jugendhilfe nach §§31-35 SGB 8'
+  },
+  {
+    title: 'Gruppenleiter Teenprojekt',
+    dateStart: '03.2004',
+    dateEnd: '03.2015',
+    organization: 'PSB Bietigheim-Bissingen',
+    url: 'https://www.psb-bb.de/',
+    description: 'Erlebnispädagogische Gruppe für Kinder aus Familien mit einem suchtkranken Elternteil'
+  },
+  {
+    title: 'Pädagogische Fachkraft',
+    dateStart: '02.2004',
+    dateEnd: '08.2004',
+    organization: 'Bauspielplatz Eglosheim e.V.',
+    description: 'Betreuung von Kindern im Alter von 7 - 14 Jahren'
+  },
+  {
+    title: 'Sozialpädagoge',
+    dateStart: '10.2002',
+    dateEnd: '12.2003',
+    organization: 'Evangelische Gesellschaft Stuttgart e.V.',
+    url: 'https://www.eva-stuttgart.de/',
+    description: 'Ambulante Jugendhilfe nach §§31-35 SGB 8'
+  }
+];
+
+const bildung = [
+  {
+    title: 'Weiterbildung „Psychosoziale Beratung in hybriden Settings"',
+    dateStart: '11.2023',
+    dateEnd: '03.2024',
+    organization: 'Hochschule Köln, Weiterbildungsinstitut',
+    url: 'https://www.th-koeln.de/'
+  },
+  {
+    title: 'Zertifizierung „Software Carpentries Instructor"',
+    dateStart: '05.2021',
+    dateEnd: '01.2022',
+    organization: 'The Carpentries',
+    url: 'https://carpentries.org/'
+  },
+  {
+    title: 'Weiterbildung „Systemische Onlineberatung"',
+    dateStart: '05.2021',
+    dateEnd: '07.2021',
+    organization: 'Praxisinstitut für systemische Beratung Süd'
+  },
+  {
+    title: 'Zertifizierung als Medienreferent',
+    dateStart: '12.2020',
+    organization: 'Landesmedienzentrum Baden-Württemberg',
+    url: 'https://www.lmz-bw.de/'
+  },
+  {
+    title: 'Weiterbildung „Systemische Supervision"',
+    dateStart: '07.2018',
+    dateEnd: '03.2020',
+    organization: 'Systemisches Institut Tübingen',
+    url: 'https://www.sit-tuebingen.de/'
+  },
+  {
+    title: 'Zertifikatslehrgang „Führungskompetenzen erwerben und erweitern"',
+    dateStart: '07.2017',
+    dateEnd: '11.2017',
+    organization: 'Technische Akademie Esslingen',
+    url: 'https://www.tae.de/'
+  },
+  {
+    title: 'Weiterbildung „Systemische Therapie und Beratung"',
+    dateStart: '08.2007',
+    dateEnd: '12.2010',
+    organization: 'Institut für Systemische Therapie und Weiterbildung, Helm-Stierlin Institut Heidelberg'
+  },
+  {
+    title: 'Studium der Erziehungswissenschaften',
+    dateStart: '02.2004',
+    dateEnd: '06.2011',
+    organization: 'Pädagogische Hochschule Ludwigsburg',
+    url: 'https://www.ph-ludwigsburg.de/',
+    description: 'Psychologie, ev. Religionspädagogik, Informatik und Medienpädagogik\nAbschluss: <strong>Diplom Pädagoge</strong>'
+  },
+  {
+    title: 'Studiengang Soziale Arbeit / Soziale Diakonie',
+    dateStart: '10.1999',
+    dateEnd: '02.2004',
+    organization: 'Evangelische Fachhochschule Reutlingen-Ludwigsburg',
+    url: 'https://www.eh-ludwigsburg.de/',
+    description: 'Abschluss: <strong>Diplom Sozialarbeiter (FH) / Diplom Sozialpädagoge (FH)</strong>\nkirchliches Examen zum Diakon und Einsegnung'
+  }
+];
+
+const mitgliedschaften = [
+  { name: 'Gesellschaft für Medien in der Wissenschaft e.V.', url: 'https://www.gmw-online.de', note: '(Mitglied im Vorstand)' },
+  { name: 'Deutsche Gesellschaft für Soziale Arbeit e.V.', url: 'https://www.dgsa.de/aktuelles-aus-der-dgsa/', note: '- Fachgruppe Digitalisierung in der Sozialen Arbeit' },
+  { name: 'Deutsche Gesellschaft für Erziehungswissenschaft e.V.', url: 'https://www.dgfe.de/sektionen-kommissionen-ag/sektion-12-medienpaedagogik', note: '- Sektion Medienpädagogik (Assoziiertes Mitglied)' },
+  { name: 'Gesellschaft für Informatik e.V.', url: 'https://fg-bildungstechnologien.gi.de/fachgruppe/arbeitskreise', note: '- Fachgruppe Bildungstechnologien' },
+  { name: 'Systemische Gesellschaft e.V.', url: 'https://systemische-gesellschaft.de' },
+  { name: 'Gesellschaft für Medienpädagogik und Kommunikationskultur e.V.', url: 'http://gmk-net.de' },
+  { name: 'shackspace e.V.', url: 'https://www.shackspace.de' },
+  { name: 'Chaos Computer Club e.V.' }
+];
+---
+
+<BaseLayout title="Lebenslauf">
+  <h1>Curriculum Vitae</h1>
+
+  <div style="text-align: right; margin-bottom: 2em;">
+    <a href="/files/cv_jan_vanvinkenroye.pdf" class="pdf-download" target="_blank">
+      <i class="fas fa-file-pdf"></i> Lebenslauf als PDF herunterladen
+    </a>
+  </div>
+
+  <h2><i class="fas fa-briefcase"></i> Berufserfahrung</h2>
+  {berufserfahrung.map((entry) => <CVEntry {...entry} />)}
+
+  <h2><i class="fas fa-graduation-cap"></i> Aus-, Fort- und Weiterbildung</h2>
+  {bildung.map((entry) => <CVEntry {...entry} />)}
+
+  <h2><i class="fas fa-certificate"></i> Fortbildungen (1-3 Tage)</h2>
+  <div class="entry">
+    <div class="entry-description">
+      <strong>Kenntnisse:</strong> Deskriptive und Inferenzstatistik, SPSS-Syntax-Programmierung
+      (PH-Ludwigsburg), Interviewtraining (EH Ludwigsburg), Qualitative Inhaltsanalyse nach Mayring
+      mit Maxqda, Expertenwissen und Experteninterview (Prof. Dr. Nagel), Gruppendiskussion nach der
+      Dokumentarischen Methode (Prof.'in Dr. Julia Franz), Basisworkshop Lehre (Personalentwicklung
+      der DHBW Ba-Wü), Hochschuldidaktik - Basiskurs, Aktivierende Methoden in der Lehre, E-Learning
+      (GHD - Ba-Wü), Fit für die Lehre 1+2 (HDZ Stuttgart), ITL v3 Foundation, Projektmanagement,
+      Container Technologie: Docker und Kubernetes
+    </div>
+  </div>
+
+  <h2><i class="fas fa-users"></i> Mitgliedschaften</h2>
+  <div class="membership-list">
+    <ul>
+      {mitgliedschaften.map((m) => (
+        <li>
+          {m.url ? <a href={m.url} target="_blank">{m.name}</a> : m.name}
+          {m.note && <span> {m.note}</span>}
+        </li>
+      ))}
+    </ul>
+  </div>
+</BaseLayout>

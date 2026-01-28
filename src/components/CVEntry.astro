@@ -1,0 +1,32 @@
+---
+interface Props {
+  title: string;
+  dateStart: string;
+  dateEnd?: string;
+  organization: string;
+  url?: string;
+  description?: string;
+}
+
+const { title, dateStart, dateEnd, organization, url, description } = Astro.props;
+const dateDisplay = dateEnd ? `${dateStart} - ${dateEnd}` : dateStart;
+---
+
+<div class="entry">
+  <div class="entry-header">
+    <span class="entry-title">{title}</span>
+    <span class="entry-date">{dateDisplay}</span>
+  </div>
+
+  <div class="entry-org">
+    {url ? (
+      <strong><a href={url} target="_blank">{organization}</a></strong>
+    ) : (
+      <strong>{organization}</strong>
+    )}
+  </div>
+
+  {description && (
+    <div class="entry-description" set:html={description.replace(/\n/g, '<br />')} />
+  )}
+</div>

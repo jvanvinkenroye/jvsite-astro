@@ -1,18 +1,15 @@
-# Pelican
-output/
-*.pid
-cache/
-__pycache__/
+# Astro
+dist/
+.astro/
 
-# Python
-*.pyc
-*.pyo
-venv/
-.venv/
-*.egg-info/
+# Node
+node_modules/
+npm-debug.log*
 
-# Deployment configuration (contains sensitive credentials)
+# Environment
 .env
+.env.local
+.env.production
 
 # macOS
 .DS_Store
@@ -27,3 +24,13 @@ venv/
 # Temporary files
 *.tmp
 *.bak
+
+# Old Pelican files (can be removed later)
+output/
+*.pid
+cache/
+__pycache__/
+*.pyc
+*.pyo
+venv/
+.venv/

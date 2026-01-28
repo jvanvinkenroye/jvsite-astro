@@ -1,0 +1,56 @@
+---
+import Navigation from './Navigation.astro';
+import Footer from './Footer.astro';
+import '../styles/main.css';
+
+interface Props {
+  title?: string;
+}
+
+const { title } = Astro.props;
+const siteTitle = 'Jan Vanvinkenroye';
+const pageTitle = title ? `${title} | ${siteTitle}` : siteTitle;
+---
+
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{pageTitle}</title>
+    <meta
+      name="description"
+      content="Jan Vanvinkenroye - Wissenschaftlicher Mitarbeiter, Sozialarbeiter und Dozent mit Schwerpunkt Digitalisierung in Bildung und Sozialer Arbeit"
+    />
+    <meta name="author" content="Jan Vanvinkenroye" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Google Fonts - Vollkorn -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Vollkorn:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- FontAwesome and Academicons -->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css"
+    />
+  </head>
+
+  <body>
+    <Navigation />
+
+    <main>
+      <slot />
+    </main>
+
+    <Footer />
+  </body>
+</html>

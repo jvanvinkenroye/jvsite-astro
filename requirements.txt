@@ -1,7 +1,0 @@
-pelican[markdown]
-markdown
-typogrify
-pybtex
-pybtex-docutils
-rendercv[full]
-reportlab

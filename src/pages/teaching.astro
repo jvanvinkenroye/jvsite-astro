@@ -1,0 +1,181 @@
+---
+import BaseLayout from '../components/BaseLayout.astro';
+import CVEntry from '../components/CVEntry.astro';
+
+const aktuell = [
+  {
+    title: 'Macromedia Hochschule, Stuttgart',
+    url: 'https://www.macromedia-fachhochschule.de/',
+    dateStart: '2025',
+    organization: 'Psychologie B.Sc.',
+    description: '„Entwicklungspsychologie" - WiSe 2025'
+  },
+  {
+    title: 'Hochschule Heilbronn',
+    url: 'https://www.hs-heilbronn.de/',
+    dateStart: '2024',
+    dateEnd: '2025',
+    organization: 'B.Sc. Angewandte Informatik',
+    description: '„Grundlagen empirischer Forschungsmethoden" - WiSe 2025\n„Experimentierpraktikum" - WiSe 2025'
+  },
+  {
+    title: 'EH Ludwigsburg',
+    url: 'https://www.eh-ludwigsburg.de/',
+    dateStart: 'seit 2014',
+    organization: 'B.A. Soziale Arbeit, B.A. Religionspädagogik, B.A. Diakoniewissenschaft',
+    description: '„Medienpädagogische Praxisprojekte in der Sozialen Arbeit" (1,5 SWS)\nThemen und Anwendungsfelder: Soziale Medien, Digitale Spiele'
+  },
+  {
+    title: 'Universität Stuttgart, TIK',
+    url: 'https://www.tik.uni-stuttgart.de/',
+    dateStart: '2018',
+    dateEnd: 'heute',
+    organization: 'Programm Studienübergreifende Schlüsselqualifikationen',
+    description: '„Kreativ-Treffpunkt Makerspace: Digitale Innovation erleben & gestalten" (2 SWS)\n„Studentisches Arbeiten mit Open Source Anwendungen und Betriebssystemen" (2 SWS)\n„Einführung in die Web-Programmierung" (2 SWS)'
+  },
+  {
+    title: 'TH Köln, Fachbereich Sozialwesen',
+    url: 'https://www.th-koeln.de/',
+    dateStart: '2023',
+    dateEnd: '2024',
+    organization: 'B.A. Soziale Arbeit',
+    description: '„Einführung in die Onlineberatung" - SoSe 2023, WiSe 2023/2024, SoSe 2024, WiSe 2024'
+  }
+];
+
+const frueher = [
+  {
+    title: 'EH Berlin',
+    url: 'https://www.eh-berlin.de/',
+    dateStart: '2025',
+    organization: 'B.A. Religions- und Gemeindepädagogik',
+    description: '„Qualitative Forschung in Religions- und Gemeindepädagogik" - SoSe 2025'
+  },
+  {
+    title: 'DHBW Stuttgart',
+    url: 'https://www.dhbw-stuttgart.de/',
+    dateStart: '2025',
+    organization: 'B.A. Soziale Arbeit',
+    description: '„Allgemeine Psychologie", „Sozialpsychologie"'
+  },
+  {
+    title: 'Hochschule München',
+    url: 'https://www.hm.edu/',
+    dateStart: '2024',
+    organization: 'M.A. Forschungsmethoden und Digitalisierung in der Sozialen Arbeit',
+    description: '„Gesellschaftliche Aspekte der Digitalisierung/Mediatisierung" - SoSe 2024'
+  },
+  {
+    title: 'Macromedia Hochschule, Stuttgart',
+    url: 'https://www.macromedia-fachhochschule.de/',
+    dateStart: '2022',
+    dateEnd: '2024',
+    organization: 'Psychologie B.Sc., Betriebswirtschaft B.A.',
+    description: '„Empirische Forschung und Statistik" - SoSe 2022\n„Orientierungsprojekt Forschung" - WiSe 2022/2023\n„Medienpsychologie" - SoSe 2023\n„Einführung in die Psychologie", „Pädagogische Psychologie" - WiSe 2023\n„Personalpsychologie", „Sozial- und Medienpsychologie" - SoSe 2024\n„Pädagogische Psychologie" - WiSe 2024'
+  },
+  {
+    title: 'IU – Internationale Hochschule',
+    url: 'https://www.iu.de/',
+    dateStart: '2021',
+    dateEnd: '2024',
+    organization: 'B.A. Soziale Arbeit, B.A. Kindheitspädagogik',
+    description: 'Standorte Stuttgart, Berlin, Essen, München, Leipzig\n„Methoden und Instrumente der sozialen Arbeit I", „Praxisreflexion I-V", „Praxisreflexion in der Kindheitspädagogik II", „Offene Jugendarbeit", „Einführung in die Soziologie"'
+  },
+  {
+    title: 'Universität Stuttgart, Institut für Erziehungswissenschaften',
+    url: 'https://www.uni-stuttgart.de/',
+    dateStart: '2020',
+    dateEnd: 'heute',
+    organization: 'M.Ed. Gymnasiales Lehramt',
+    description: '„Potentiale der Ermöglichungsdidaktik", „Einführung in die Mediendidaktik"'
+  },
+  {
+    title: 'PH Ludwigsburg',
+    url: 'https://www.ph-ludwigsburg.de/',
+    dateStart: '2019',
+    dateEnd: '2022',
+    organization: 'Bildungswissenschaften B.A., M.A. Berufliche Bildung, B.Ed. Sonderpädagogik',
+    description: '„Einführung in die kollegiale Beratung" (2 SWS)\n„Organisatorische Strukturen der Beruflichen Bildung" (3 SWS)\n„Making in der Biologiedidaktik" (2 SWS)'
+  },
+  {
+    title: 'HS Esslingen',
+    url: 'https://www.hs-esslingen.de/',
+    dateStart: '2017',
+    dateEnd: '2021',
+    organization: 'B.A. Soziale Arbeit',
+    description: '„Erkenntnistheoretische Grundlagen der Forschung in der Sozialen Arbeit" (2 SWS)\n„Computerspiele in der Sozialen Arbeit"\n„Digitalisierung in der Sozialen Arbeit" (2 SWS)'
+  },
+  {
+    title: 'Akkon Hochschule Berlin',
+    url: 'https://www.akkon-hochschule.de/',
+    dateStart: '2022',
+    dateEnd: '2024',
+    organization: 'B.A. Soziale Arbeit',
+    description: '„Quantitative Forschungsmethoden in der Sozialen Arbeit" - SoSe 2022, WiSe 2022/2023\n„Psychologische Grundlagen der Sozialen Arbeit" - WiSe 2023, SoSe 2023, WiSe 2024'
+  }
+];
+
+const berufskolleg = [
+  {
+    title: 'DAA Berufliche Schulen Stuttgart',
+    url: 'https://www.daa-stuttgart.de/',
+    dateStart: 'seit 2015',
+    organization: 'Duales Berufskolleg Sozialwesen, Berufskolleg Fachhochschulreife, Berufskolleg Sozialpädagogik',
+    description: 'Unterricht in: Sozialpädagogik, Psychologie/Pädagogik, Ethik und Informatik'
+  },
+  {
+    title: 'IB-GiS Stuttgart',
+    url: 'https://www.ib-schulen.de/standort/stuttgart-gis',
+    dateStart: '2012',
+    dateEnd: '2018',
+    organization: 'Berufskolleg für Sozialpädagogik und Berufsfachschule für Ergotherapie',
+    description: 'Technische Medien, Pädagogik/Psychologie, Praxisbegleitung'
+  },
+  {
+    title: 'Christiane-Herzog-Schule, Heilbronn',
+    url: 'https://www.chs-hn.de/',
+    dateStart: '2011',
+    dateEnd: '2012',
+    organization: '',
+    description: 'Unterricht in: Pädagogik/Psychologie am beruflichen Gymnasium, Erziehungslehre am Berufskolleg, Spielpädagogik in der Fachschule für Erzieher'
+  },
+  {
+    title: 'Kolping Bildungswerk Württemberg e.V.',
+    url: 'https://www.kolping-bildungswerk.de/',
+    dateStart: '2010',
+    dateEnd: '2011',
+    organization: '',
+    description: 'Unterricht in: Informatik am Beruflichen Gymnasium, Ethik im Berufskolleg, Pädagogik/Psychologie in der Berufsoberschule'
+  }
+];
+---
+
+<BaseLayout title="Lehre">
+  <h1>Teaching</h1>
+
+  <h2><i class="fas fa-chalkboard-teacher"></i> Lehre</h2>
+
+  <p>
+    In der Lehre bin ich stets bestrebt, für die Lernenden eine Umgebung zu bieten, in denen
+    expansives Lernen gelingen kann. Meine didaktischen Bezüge liegen im "Constructive Alignment"
+    und der "Ermöglichungsdidaktik". Lehre (immer neu) gestalten ist eine meiner Leidenschaften so
+    dass ich entsprechende Gelegenheiten gern nutze.
+  </p>
+
+  <p>
+    Meine Themenfelder: Allgemeine Psychologie (Kognition, Wahrnehmung, Denken, Lernen), Sozial- und
+    Medienpsychologie, (handlungsorientierte) Medienpädagogik, empirische Forschungsmethoden und
+    Statistik, (Online) Beratung in der Sozialen Arbeit und Erwachsenenbildung, Förderung von
+    Digitalisierungsbezogenen Kompetenzen, Mediendidaktik in Schule, Programmierung mit Python,
+    Einführung Linux
+  </p>
+
+  <h3>Aktuelle Lehraufträge</h3>
+  {aktuell.map((entry) => <CVEntry {...entry} />)}
+
+  <h3>Frühere Lehraufträge</h3>
+  {frueher.map((entry) => <CVEntry {...entry} />)}
+
+  <h3>Berufskolleg</h3>
+  {berufskolleg.map((entry) => <CVEntry {...entry} />)}
+</BaseLayout>

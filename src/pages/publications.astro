@@ -1,0 +1,62 @@
+---
+import BaseLayout from '../components/BaseLayout.astro';
+import { getPublications } from '../lib/bibtex';
+
+const publications = getPublications();
+
+// Group by year
+const byYear = new Map<number, typeof publications>();
+for (const pub of publications) {
+  if (!byYear.has(pub.year)) {
+    byYear.set(pub.year, []);
+  }
+  byYear.get(pub.year)!.push(pub);
+}
+
+const years = [...byYear.keys()].sort((a, b) => b - a);
+---
+
+<BaseLayout title="Publikationen">
+  <h1>Publikationen</h1>
+
+  <p>
+    Meine Forschungsinteressen liegen im Bereich der Digitalisierung in Bildung und Sozialer
+    Arbeit, Medienpädagogik und empirischer Forschungsmethoden.
+  </p>
+
+  <p>
+    <strong>ORCID:</strong>
+    <i class="ai ai-orcid"></i>
+    <a href="https://orcid.org/0000-0001-7480-4122" target="_blank">0000-0001-7480-4122</a>
+  </p>
+
+  <h2><i class="ai ai-google-scholar"></i> Veröffentlichungen</h2>
+
+  {years.map((year) => (
+    <section>
+      <h3>{year}</h3>
+      <ul class="publications-list">
+        {byYear.get(year)!.map((pub) => (
+          <li>
+            <span class="publication-authors">{pub.authors}</span>
+            <span class="publication-title">{pub.title}</span>
+            {pub.journal && <span class="publication-venue">{pub.journal}</span>}
+            {pub.booktitle && <span class="publication-venue">{pub.booktitle}</span>}
+            {pub.volume && <span>, Vol. {pub.volume}</span>}
+            {pub.number && <span>({pub.number})</span>}
+            {pub.pages && <span>, S. {pub.pages}</span>}
+            {pub.publisher && <span>. {pub.publisher}</span>}
+            <span class="publication-links">
+              {pub.doi && (
+                <a href={`https://doi.org/${pub.doi}`} target="_blank">[DOI]</a>
+              )}
+              {pub.url && !pub.doi && (
+                <a href={pub.url} target="_blank">[Link]</a>
+              )}
+            </span>
+          </li>
+        ))}
+      </ul>
+    </section>
+  ))}
+</BaseLayout>

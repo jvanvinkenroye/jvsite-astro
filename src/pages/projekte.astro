@@ -1,0 +1,52 @@
+---
+import BaseLayout from '../components/BaseLayout.astro';
+import CVEntry from '../components/CVEntry.astro';
+
+const laufend = [
+  {
+    title: 'Wissensmanagementtool Uniweit',
+    dateStart: 'laufend',
+    organization: 'Universität Stuttgart, TIK',
+    description: 'Projektleitung für die Entwicklung und Einführung eines universitätsweiten Wissensmanagement-Systems zur Verbesserung der Zusammenarbeit und des Informationsaustauschs.'
+  },
+  {
+    title: 'Tagung "Junges Forum für Medien und Hochschulentwicklung 2026"',
+    dateStart: 'laufend',
+    organization: 'Universität Stuttgart, TIK',
+    description: 'Ausrichtung der gemeinsamen Nachwuchstagung der Gesellschaft für Medien in der Wissenschaft e.V., Fachgruppe Medienpädagogik der Deutschen Gesellschaft für Erziehungswissenschaft, Deutschen Gesellschaft für Hochschuldidaktik und Fachgruppe Bildungstechnologien der Gesellschaft für Informatik'
+  },
+  {
+    title: 'Mastodon Server Higher-edu.social',
+    dateStart: 'laufend',
+    organization: 'Universität Stuttgart, TIK',
+    description: 'Betrieb und Moderation eines gemeinsamen Mastodon Servers für die Fachcommunity aus Hochschuldidaktik, Mediendidaktik und Bildungstechnologie'
+  }
+];
+
+const abgeschlossen = [
+  {
+    title: 'MakEd_digital – Makerspaces in der Lehrkräftebildung',
+    dateStart: '2020',
+    dateEnd: 'heute',
+    organization: 'BMBF-Projekt | Universität Stuttgart',
+    description: 'Entwicklung digitalisierungsbezogener Kompetenzen von (zukünftigen) Lehrkräften für die Nutzung, Entwicklung und Reflexion digitaler Medien durch Makerspaces. Vier Hochschulen im Raum Stuttgart-Ludwigsburg arbeiten zusammen: Universität Stuttgart, PH Ludwigsburg, Hochschule der Medien Stuttgart und Frankfurt University of Applied Sciences.\n<strong>Website:</strong> <a href="https://www.maked-digital.de/" target="_blank">maked-digital.de</a>'
+  },
+  {
+    title: 'BIDA – Interkulturelle Kompetenz',
+    dateStart: '2007',
+    dateEnd: '2009',
+    organization: 'ev. Hochschule Ludwigsburg | Institut für angewandte Forschung',
+    description: 'Planung und Durchführung einer Begleitevaluation für ein friedenspädagogisches Projekt zur Förderung interkultureller Kompetenz im Nahen Osten (Jordanien, Libanon, Deutschland).'
+  }
+];
+---
+
+<BaseLayout title="Projekte">
+  <h1>Aktuelle Projekte</h1>
+
+  <h2><i class="fas fa-project-diagram"></i> Laufende Projekte</h2>
+  {laufend.map((entry) => <CVEntry {...entry} />)}
+
+  <h2><i class="fas fa-check-circle"></i> Abgeschlossene Projekte</h2>
+  {abgeschlossen.map((entry) => <CVEntry {...entry} />)}
+</BaseLayout>

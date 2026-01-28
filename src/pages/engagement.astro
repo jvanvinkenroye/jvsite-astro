@@ -1,0 +1,53 @@
+---
+import BaseLayout from '../components/BaseLayout.astro';
+
+const mitgliedschaften = [
+  { name: 'Gesellschaft für Medien in der Wissenschaft e.V.', url: 'https://www.gmw-online.de', note: '(Mitglied im Vorstand)' },
+  { name: 'Deutsche Gesellschaft für Soziale Arbeit e.V.', url: 'https://www.dgsa.de/aktuelles-aus-der-dgsa/', note: '- Fachgruppe Digitalisierung in der Sozialen Arbeit' },
+  { name: 'Deutsche Gesellschaft für Hochschuldidaktik', url: 'https://www.dghd.de' },
+  { name: 'Deutsche Gesellschaft für Erziehungswissenschaft e.V.', url: 'https://www.dgfe.de/sektionen-kommissionen-ag/sektion-12-medienpaedagogik', note: '- Sektion Medienpädagogik (Assoziiertes Mitglied)' },
+  { name: 'Gesellschaft für Informatik e.V.', url: 'https://fg-bildungstechnologien.gi.de/fachgruppe/arbeitskreise', note: '- Fachgruppe Bildungstechnologien' },
+  { name: 'Finsoz e.V., Fachverband Sozialinformatik', url: 'https://finsoz.de', note: '- Gründungsmitglied' },
+  { name: 'Systemische Gesellschaft e.V.', url: 'https://systemische-gesellschaft.de' },
+  { name: 'Gesellschaft für Medienpädagogik und Kommunikationskultur e.V.', url: 'http://gmk-net.de' },
+  { name: 'Denkeffekt e.V.', url: 'https://denkfekt.org', note: '- Unterstützung bei der Vereinsgründung, Podcast-Projekt und IT-Infrastruktur, aktuell: Vorstand' },
+  { name: 'shackspace e.V.', url: 'https://www.shackspace.de', note: '- Vereinsgründung und Vorstand bis 2014' },
+  { name: 'Chaos Computer Club e.V.' }
+];
+
+const ehemalige = [
+  { name: 'Kurve Jugendhilfe Region Stuttgart e.V.', note: '- Vereinsgründung und Vorstand 2009 - 2013' },
+  { name: 'Bund für Umwelt und Naturschutz Deutschland, Landesverband NRW', note: '- Mitglied im Landesjugendsprecherteam' },
+  { name: 'Neusser Computerclub e.V.', note: '- Vorstandsmitglied 1996 - 1999' }
+];
+---
+
+<BaseLayout title="Engagement">
+  <h1>Engagement</h1>
+
+  <h2><i class="fas fa-users"></i> Mitgliedschaften</h2>
+
+  <div class="membership-list">
+    <ul>
+      {mitgliedschaften.map((m) => (
+        <li>
+          {m.url ? <a href={m.url} target="_blank">{m.name}</a> : m.name}
+          {m.note && <span> {m.note}</span>}
+        </li>
+      ))}
+    </ul>
+  </div>
+
+  <h2><i class="fas fa-history"></i> Ehemalige Mitgliedschaften</h2>
+
+  <div class="membership-list">
+    <ul>
+      {ehemalige.map((m) => (
+        <li>
+          {m.name}
+          {m.note && <span> {m.note}</span>}
+        </li>
+      ))}
+    </ul>
+  </div>
+</BaseLayout>
